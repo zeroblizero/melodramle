@@ -24,7 +24,7 @@
   },
   {
     "id": "cosi_fan_tutte",
-    "title": "Cosi fan tutte",
+    "title": "Così fan tutte",
     "composer": "Wolfgang Amadeus Mozart",
     "year": 1790,
     "language": "Italian",
@@ -35,7 +35,7 @@
   },
   {
     "id": "magic_flute",
-    "title": "Die Zauberflote",
+    "title": "Die Zauberflöte",
     "composer": "Wolfgang Amadeus Mozart",
     "year": 1791,
     "language": "German",
@@ -56,7 +56,7 @@
   },
   {
     "id": "freischutz",
-    "title": "Der Freischutz",
+    "title": "Der Freischütz",
     "composer": "Carl Maria von Weber",
     "year": 1821,
     "language": "German",
@@ -263,7 +263,7 @@
   },
   {
     "id": "meistersinger",
-    "title": "Die Meistersinger von Nurnberg",
+    "title": "Die Meistersinger von Nürnberg",
     "composer": "Richard Wagner",
     "year": 1868,
     "language": "German",
@@ -293,7 +293,7 @@
   },
   {
     "id": "valkyrie",
-    "title": "Die Walkure",
+    "title": "Die Walküre",
     "composer": "Richard Wagner",
     "year": 1870,
     "language": "German",
@@ -303,7 +303,7 @@
   },
   {
     "id": "flying_dutchman",
-    "title": "Der fliegende Hollander",
+    "title": "Der fliegende Holländer",
     "composer": "Richard Wagner",
     "year": 1843,
     "language": "German",
@@ -570,7 +570,7 @@
   },
   {
     "id": "boheme",
-    "title": "La boheme",
+    "title": "La bohème",
     "composer": "Giacomo Puccini",
     "year": 1896,
     "language": "Italian",
@@ -670,7 +670,7 @@
     ]
   },
   {
-    "id": "wck",
+    "id": "wozzeck",
     "title": "Wozzeck",
     "composer": "Alban Berg",
     "year": 1925,
@@ -731,8 +731,8 @@
     ]
   },
   {
-    "id": "faints_helene",
-    "title": "La belle Helene",
+    "id": "belle_helene",
+    "title": "La belle Hélène",
     "composer": "Jacques Offenbach",
     "year": 1864,
     "language": "French",
