@@ -4,8 +4,9 @@ import operas from './data/operas.json';
 import { buildSearchIndex, findBestOperaMatch } from './utils/matching';
 import { filterOperas, getDailyOpera, getRandomOpera, getYearFeedback } from './utils/game';
 
-const searchIndex = buildSearchIndex(operas);
 const uniqueLanguages = [...new Set(operas.map((opera) => opera.language))].sort();
+const minOperaYear = Math.min(...operas.map((opera) => opera.year));
+const maxOperaYear = Math.max(...operas.map((opera) => opera.year));
 
 function App() {
   return (
@@ -44,6 +45,8 @@ function PracticeMode() {
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
+  const [sliderFrom, setSliderFrom] = useState(minOperaYear);
+  const [sliderTo, setSliderTo] = useState(maxOperaYear);
   const [pool, setPool] = useState(operas);
   const [target, setTarget] = useState(null);
 
@@ -66,6 +69,32 @@ function PracticeMode() {
     setSelectedLanguages((prev) =>
       prev.includes(language) ? prev.filter((item) => item !== language) : [...prev, language],
     );
+  };
+
+  const updateFromInput = (value) => {
+    setFrom(value);
+    if (value === '') {
+      return;
+    }
+    const parsed = Number(value);
+    if (!Number.isFinite(parsed)) {
+      return;
+    }
+    const clamped = Math.max(minOperaYear, Math.min(parsed, sliderTo));
+    setSliderFrom(clamped);
+  };
+
+  const updateToInput = (value) => {
+    setTo(value);
+    if (value === '') {
+      return;
+    }
+    const parsed = Number(value);
+    if (!Number.isFinite(parsed)) {
+      return;
+    }
+    const clamped = Math.min(maxOperaYear, Math.max(parsed, sliderFrom));
+    setSliderTo(clamped);
   };
 
   return (
@@ -99,12 +128,41 @@ function PracticeMode() {
             <div className="filter-block year-row">
               <label>
                 Year from
-                <input type="number" value={from} onChange={(e) => setFrom(e.target.value)} />
+                <input type="number" value={from} onChange={(e) => updateFromInput(e.target.value)} />
               </label>
               <label>
                 Year to
-                <input type="number" value={to} onChange={(e) => setTo(e.target.value)} />
+                <input type="number" value={to} onChange={(e) => updateToInput(e.target.value)} />
               </label>
+            </div>
+            <div className="filter-block">
+              <p>Year range slider</p>
+              <div className="year-slider">
+                <input
+                  type="range"
+                  min={minOperaYear}
+                  max={maxOperaYear}
+                  value={sliderFrom}
+                  aria-label="Minimum year"
+                  onChange={(e) => {
+                    const value = Math.min(Number(e.target.value), sliderTo);
+                    setSliderFrom(value);
+                    setFrom(String(value));
+                  }}
+                />
+                <input
+                  type="range"
+                  min={minOperaYear}
+                  max={maxOperaYear}
+                  value={sliderTo}
+                  aria-label="Maximum year"
+                  onChange={(e) => {
+                    const value = Math.max(Number(e.target.value), sliderFrom);
+                    setSliderTo(value);
+                    setTo(String(value));
+                  }}
+                />
+              </div>
             </div>
           </div>
           <button className="accent-button" onClick={applyFilters}>
@@ -124,17 +182,18 @@ function PracticeMode() {
               Change Filters
             </button>
           </div>
-          <GameBoard target={target} />
+          <GameBoard target={target} searchPool={pool} />
         </>
       )}
     </section>
   );
 }
 
-function GameBoard({ target }) {
+function GameBoard({ target, searchPool = operas }) {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([]);
   const [won, setWon] = useState(false);
+  const filteredSearchIndex = useMemo(() => buildSearchIndex(searchPool), [searchPool]);
 
   useEffect(() => {
     setInput('');
@@ -142,7 +201,7 @@ function GameBoard({ target }) {
     setWon(false);
   }, [target.id]);
 
-  const bestMatch = useMemo(() => findBestOperaMatch(input, searchIndex), [input]);
+  const bestMatch = useMemo(() => findBestOperaMatch(input, filteredSearchIndex), [input, filteredSearchIndex]);
 
   const submitGuess = (opera) => {
     const composerCorrect = opera.composer === target.composer;
@@ -151,11 +210,14 @@ function GameBoard({ target }) {
     const titleCorrect = opera.id === target.id;
 
     setHistory((prev) => [
-      {
-        title: opera.title,
-        composerCorrect,
-        languageCorrect,
-        yearFeedback,
+        {
+          title: opera.title,
+          composer: opera.composer,
+          language: opera.language,
+          year: opera.year,
+          composerCorrect,
+          languageCorrect,
+          yearFeedback,
       },
       ...prev,
     ]);
@@ -240,13 +302,13 @@ function GameBoard({ target }) {
                   <tr key={`${entry.title}-${idx}`}>
                     <td>{entry.title}</td>
                     <td className={entry.composerCorrect ? 'good' : 'bad'}>
-                      {entry.composerCorrect ? '✅' : '❌'}
+                      {entry.composerCorrect ? '✅' : `❌ ${entry.composer}`}
                     </td>
                     <td className={entry.languageCorrect ? 'good' : 'bad'}>
-                      {entry.languageCorrect ? '✅' : '❌'}
+                      {entry.languageCorrect ? '✅' : `❌ ${entry.language}`}
                     </td>
                     <td className={entry.yearFeedback.isCorrect ? 'good' : 'bad'}>
-                      {entry.yearFeedback.symbol}
+                      {entry.yearFeedback.isCorrect ? '✅' : `${entry.yearFeedback.symbol} ${entry.year}`}
                     </td>
                   </tr>
                 ))
