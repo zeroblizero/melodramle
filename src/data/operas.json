@@ -1,0 +1,815 @@
+[
+  {
+    "id": "nozze_figaro",
+    "title": "Le nozze di Figaro",
+    "composer": "Wolfgang Amadeus Mozart",
+    "year": 1786,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Die Hochzeit des Figaro",
+      "The Marriage of Figaro",
+      "Las bodas de Figaro"
+    ]
+  },
+  {
+    "id": "don_giovanni",
+    "title": "Don Giovanni",
+    "composer": "Wolfgang Amadeus Mozart",
+    "year": 1787,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Il dissoluto punito",
+      "Don Juan"
+    ]
+  },
+  {
+    "id": "cosi_fan_tutte",
+    "title": "Così fan tutte",
+    "composer": "Wolfgang Amadeus Mozart",
+    "year": 1790,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Cosi",
+      "Women Are Like That"
+    ]
+  },
+  {
+    "id": "magic_flute",
+    "title": "Die Zauberflöte",
+    "composer": "Wolfgang Amadeus Mozart",
+    "year": 1791,
+    "language": "German",
+    "alternativeTitles": [
+      "The Magic Flute",
+      "La flauta magica"
+    ]
+  },
+  {
+    "id": "fidelio",
+    "title": "Fidelio",
+    "composer": "Ludwig van Beethoven",
+    "year": 1805,
+    "language": "German",
+    "alternativeTitles": [
+      "Leonore"
+    ]
+  },
+  {
+    "id": "freischutz",
+    "title": "Der Freischütz",
+    "composer": "Carl Maria von Weber",
+    "year": 1821,
+    "language": "German",
+    "alternativeTitles": [
+      "The Marksman",
+      "El cazador furtivo"
+    ]
+  },
+  {
+    "id": "norma",
+    "title": "Norma",
+    "composer": "Vincenzo Bellini",
+    "year": 1831,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Norma Bellini"
+    ]
+  },
+  {
+    "id": "elisir_amore",
+    "title": "L'elisir d'amore",
+    "composer": "Gaetano Donizetti",
+    "year": 1832,
+    "language": "Italian",
+    "alternativeTitles": [
+      "The Elixir of Love",
+      "Elisir d amore"
+    ]
+  },
+  {
+    "id": "lucia_lammermoor",
+    "title": "Lucia di Lammermoor",
+    "composer": "Gaetano Donizetti",
+    "year": 1835,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Lucia"
+    ]
+  },
+  {
+    "id": "huguenots",
+    "title": "Les Huguenots",
+    "composer": "Giacomo Meyerbeer",
+    "year": 1836,
+    "language": "French",
+    "alternativeTitles": [
+      "The Huguenots"
+    ]
+  },
+  {
+    "id": "nabucco",
+    "title": "Nabucco",
+    "composer": "Giuseppe Verdi",
+    "year": 1842,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Nabucodonosor"
+    ]
+  },
+  {
+    "id": "ernani",
+    "title": "Ernani",
+    "composer": "Giuseppe Verdi",
+    "year": 1844,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Il proscritto"
+    ]
+  },
+  {
+    "id": "rigoletto",
+    "title": "Rigoletto",
+    "composer": "Giuseppe Verdi",
+    "year": 1851,
+    "language": "Italian",
+    "alternativeTitles": [
+      "The King's Jester"
+    ]
+  },
+  {
+    "id": "traviata",
+    "title": "La traviata",
+    "composer": "Giuseppe Verdi",
+    "year": 1853,
+    "language": "Italian",
+    "alternativeTitles": [
+      "The Fallen Woman",
+      "Traviata"
+    ]
+  },
+  {
+    "id": "trovatore",
+    "title": "Il trovatore",
+    "composer": "Giuseppe Verdi",
+    "year": 1853,
+    "language": "Italian",
+    "alternativeTitles": [
+      "The Troubadour"
+    ]
+  },
+  {
+    "id": "sicilian_vespers",
+    "title": "Les Vepres siciliennes",
+    "composer": "Giuseppe Verdi",
+    "year": 1855,
+    "language": "French",
+    "alternativeTitles": [
+      "I vespri siciliani",
+      "The Sicilian Vespers"
+    ]
+  },
+  {
+    "id": "faust",
+    "title": "Faust",
+    "composer": "Charles Gounod",
+    "year": 1859,
+    "language": "French",
+    "alternativeTitles": [
+      "Margarethe"
+    ]
+  },
+  {
+    "id": "orfeo_euridice",
+    "title": "Orfeo ed Euridice",
+    "composer": "Christoph Willibald Gluck",
+    "year": 1762,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Orphee et Eurydice",
+      "Orpheus and Eurydice"
+    ]
+  },
+  {
+    "id": "samson_dalila",
+    "title": "Samson et Dalila",
+    "composer": "Camille Saint-Saens",
+    "year": 1877,
+    "language": "French",
+    "alternativeTitles": [
+      "Samson and Delilah"
+    ]
+  },
+  {
+    "id": "carmen",
+    "title": "Carmen",
+    "composer": "Georges Bizet",
+    "year": 1875,
+    "language": "French",
+    "alternativeTitles": [
+      "Bizet Carmen"
+    ]
+  },
+  {
+    "id": "barber_seville",
+    "title": "Il barbiere di Siviglia",
+    "composer": "Gioachino Rossini",
+    "year": 1816,
+    "language": "Italian",
+    "alternativeTitles": [
+      "The Barber of Seville",
+      "Der Barbier von Sevilla"
+    ]
+  },
+  {
+    "id": "william_tell",
+    "title": "Guillaume Tell",
+    "composer": "Gioachino Rossini",
+    "year": 1829,
+    "language": "French",
+    "alternativeTitles": [
+      "William Tell",
+      "Guglielmo Tell"
+    ]
+  },
+  {
+    "id": "aida",
+    "title": "Aida",
+    "composer": "Giuseppe Verdi",
+    "year": 1871,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Aida Verdi"
+    ]
+  },
+  {
+    "id": "otello",
+    "title": "Otello",
+    "composer": "Giuseppe Verdi",
+    "year": 1887,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Othello"
+    ]
+  },
+  {
+    "id": "falstaff",
+    "title": "Falstaff",
+    "composer": "Giuseppe Verdi",
+    "year": 1893,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Sir John Falstaff"
+    ]
+  },
+  {
+    "id": "meistersinger",
+    "title": "Die Meistersinger von Nürnberg",
+    "composer": "Richard Wagner",
+    "year": 1868,
+    "language": "German",
+    "alternativeTitles": [
+      "The Mastersingers of Nuremberg"
+    ]
+  },
+  {
+    "id": "tristan_isolde",
+    "title": "Tristan und Isolde",
+    "composer": "Richard Wagner",
+    "year": 1865,
+    "language": "German",
+    "alternativeTitles": [
+      "Tristan and Isolde"
+    ]
+  },
+  {
+    "id": "lohengrin",
+    "title": "Lohengrin",
+    "composer": "Richard Wagner",
+    "year": 1850,
+    "language": "German",
+    "alternativeTitles": [
+      "Knight of the Swan"
+    ]
+  },
+  {
+    "id": "valkyrie",
+    "title": "Die Walküre",
+    "composer": "Richard Wagner",
+    "year": 1870,
+    "language": "German",
+    "alternativeTitles": [
+      "The Valkyrie"
+    ]
+  },
+  {
+    "id": "flying_dutchman",
+    "title": "Der fliegende Holländer",
+    "composer": "Richard Wagner",
+    "year": 1843,
+    "language": "German",
+    "alternativeTitles": [
+      "The Flying Dutchman"
+    ]
+  },
+  {
+    "id": "eugene_onegin",
+    "title": "Yevgeny Onegin",
+    "composer": "Pyotr Ilyich Tchaikovsky",
+    "year": 1879,
+    "language": "Russian",
+    "alternativeTitles": [
+      "Eugene Onegin",
+      "Evgenii Onegin"
+    ]
+  },
+  {
+    "id": "queen_spades",
+    "title": "Pikovaya dama",
+    "composer": "Pyotr Ilyich Tchaikovsky",
+    "year": 1890,
+    "language": "Russian",
+    "alternativeTitles": [
+      "The Queen of Spades",
+      "Pique Dame"
+    ]
+  },
+  {
+    "id": "boris_godunov",
+    "title": "Boris Godunov",
+    "composer": "Modest Mussorgsky",
+    "year": 1874,
+    "language": "Russian",
+    "alternativeTitles": [
+      "Boris"
+    ]
+  },
+  {
+    "id": "khovanshchina",
+    "title": "Khovanshchina",
+    "composer": "Modest Mussorgsky",
+    "year": 1886,
+    "language": "Russian",
+    "alternativeTitles": [
+      "The Khovansky Affair"
+    ]
+  },
+  {
+    "id": "snow_maiden",
+    "title": "Snegurochka",
+    "composer": "Nikolai Rimsky-Korsakov",
+    "year": 1882,
+    "language": "Russian",
+    "alternativeTitles": [
+      "The Snow Maiden"
+    ]
+  },
+  {
+    "id": "golden_cockerel",
+    "title": "Zolotoy petushok",
+    "composer": "Nikolai Rimsky-Korsakov",
+    "year": 1909,
+    "language": "Russian",
+    "alternativeTitles": [
+      "The Golden Cockerel"
+    ]
+  },
+  {
+    "id": "life_for_tsar",
+    "title": "Zhizn za tsarya",
+    "composer": "Mikhail Glinka",
+    "year": 1836,
+    "language": "Russian",
+    "alternativeTitles": [
+      "A Life for the Tsar",
+      "Ivan Susanin"
+    ]
+  },
+  {
+    "id": "rusalka_dvorak",
+    "title": "Rusalka",
+    "composer": "Antonin Dvorak",
+    "year": 1901,
+    "language": "Czech",
+    "alternativeTitles": [
+      "Rusalka Dvorak"
+    ]
+  },
+  {
+    "id": "bartered_bride",
+    "title": "Prodaná nevesta",
+    "composer": "Bedrich Smetana",
+    "year": 1866,
+    "language": "Czech",
+    "alternativeTitles": [
+      "The Bartered Bride",
+      "Prodaná nevěsta"
+    ]
+  },
+  {
+    "id": "jenufa",
+    "title": "Jenufa",
+    "composer": "Leos Janacek",
+    "year": 1904,
+    "language": "Czech",
+    "alternativeTitles": [
+      "Jeji pastorkyna",
+      "Her Stepdaughter"
+    ]
+  },
+  {
+    "id": "katya_kabanova",
+    "title": "Katya Kabanova",
+    "composer": "Leos Janacek",
+    "year": 1921,
+    "language": "Czech",
+    "alternativeTitles": [
+      "Káťa Kabanová"
+    ]
+  },
+  {
+    "id": "dido_aeneas",
+    "title": "Dido and Aeneas",
+    "composer": "Henry Purcell",
+    "year": 1689,
+    "language": "English",
+    "alternativeTitles": [
+      "Dido & Aeneas"
+    ]
+  },
+  {
+    "id": "peter_grimes",
+    "title": "Peter Grimes",
+    "composer": "Benjamin Britten",
+    "year": 1945,
+    "language": "English",
+    "alternativeTitles": [
+      "Grimes"
+    ]
+  },
+  {
+    "id": "billy_budd",
+    "title": "Billy Budd",
+    "composer": "Benjamin Britten",
+    "year": 1951,
+    "language": "English",
+    "alternativeTitles": [
+      "Billy Budd Britten"
+    ]
+  },
+  {
+    "id": "turn_screw",
+    "title": "The Turn of the Screw",
+    "composer": "Benjamin Britten",
+    "year": 1954,
+    "language": "English",
+    "alternativeTitles": [
+      "Turn of the Screw"
+    ]
+  },
+  {
+    "id": "death_venice",
+    "title": "Death in Venice",
+    "composer": "Benjamin Britten",
+    "year": 1973,
+    "language": "English",
+    "alternativeTitles": [
+      "Morte a Venezia opera"
+    ]
+  },
+  {
+    "id": "acis_galatea",
+    "title": "Acis and Galatea",
+    "composer": "George Frideric Handel",
+    "year": 1718,
+    "language": "English",
+    "alternativeTitles": [
+      "Handel Acis and Galatea"
+    ]
+  },
+  {
+    "id": "giulio_cesare",
+    "title": "Giulio Cesare in Egitto",
+    "composer": "George Frideric Handel",
+    "year": 1724,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Julius Caesar in Egypt",
+      "Giulio Cesare"
+    ]
+  },
+  {
+    "id": "rinaldo",
+    "title": "Rinaldo",
+    "composer": "George Frideric Handel",
+    "year": 1711,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Handel Rinaldo"
+    ]
+  },
+  {
+    "id": "alcina",
+    "title": "Alcina",
+    "composer": "George Frideric Handel",
+    "year": 1735,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Handel Alcina"
+    ]
+  },
+  {
+    "id": "agrippina",
+    "title": "Agrippina",
+    "composer": "George Frideric Handel",
+    "year": 1709,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Handel Agrippina"
+    ]
+  },
+  {
+    "id": "orlando_furioso",
+    "title": "Orlando furioso",
+    "composer": "Antonio Vivaldi",
+    "year": 1727,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Vivaldi Orlando furioso"
+    ]
+  },
+  {
+    "id": "coronation_poppea",
+    "title": "L'incoronazione di Poppea",
+    "composer": "Claudio Monteverdi",
+    "year": 1643,
+    "language": "Italian",
+    "alternativeTitles": [
+      "The Coronation of Poppea",
+      "Incoronazione di Poppea"
+    ]
+  },
+  {
+    "id": "orfeo_monteverdi",
+    "title": "L'Orfeo",
+    "composer": "Claudio Monteverdi",
+    "year": 1607,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Orfeo Monteverdi"
+    ]
+  },
+  {
+    "id": "don_carlo",
+    "title": "Don Carlo",
+    "composer": "Giuseppe Verdi",
+    "year": 1867,
+    "language": "French",
+    "alternativeTitles": [
+      "Don Carlos"
+    ]
+  },
+  {
+    "id": "boheme",
+    "title": "La bohème",
+    "composer": "Giacomo Puccini",
+    "year": 1896,
+    "language": "Italian",
+    "alternativeTitles": [
+      "La Bohème",
+      "Boheme"
+    ]
+  },
+  {
+    "id": "tosca",
+    "title": "Tosca",
+    "composer": "Giacomo Puccini",
+    "year": 1900,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Puccini Tosca"
+    ]
+  },
+  {
+    "id": "madama_butterfly",
+    "title": "Madama Butterfly",
+    "composer": "Giacomo Puccini",
+    "year": 1904,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Madame Butterfly"
+    ]
+  },
+  {
+    "id": "turandot",
+    "title": "Turandot",
+    "composer": "Giacomo Puccini",
+    "year": 1926,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Puccini Turandot"
+    ]
+  },
+  {
+    "id": "manon_lescaut",
+    "title": "Manon Lescaut",
+    "composer": "Giacomo Puccini",
+    "year": 1893,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Puccini Manon Lescaut"
+    ]
+  },
+  {
+    "id": "pelleas_melisande",
+    "title": "Pelleas et Melisande",
+    "composer": "Claude Debussy",
+    "year": 1902,
+    "language": "French",
+    "alternativeTitles": [
+      "Pelléas et Mélisande"
+    ]
+  },
+  {
+    "id": "les_contes_hoffmann",
+    "title": "Les Contes d'Hoffmann",
+    "composer": "Jacques Offenbach",
+    "year": 1881,
+    "language": "French",
+    "alternativeTitles": [
+      "The Tales of Hoffmann"
+    ]
+  },
+  {
+    "id": "werther",
+    "title": "Werther",
+    "composer": "Jules Massenet",
+    "year": 1892,
+    "language": "French",
+    "alternativeTitles": [
+      "Massenet Werther"
+    ]
+  },
+  {
+    "id": "manon_massenet",
+    "title": "Manon",
+    "composer": "Jules Massenet",
+    "year": 1884,
+    "language": "French",
+    "alternativeTitles": [
+      "Manon Massenet"
+    ]
+  },
+  {
+    "id": "dialogues_carmelites",
+    "title": "Dialogues des Carmelites",
+    "composer": "Francis Poulenc",
+    "year": 1957,
+    "language": "French",
+    "alternativeTitles": [
+      "Dialogues of the Carmelites"
+    ]
+  },
+  {
+    "id": "wozzeck",
+    "title": "Wozzeck",
+    "composer": "Alban Berg",
+    "year": 1925,
+    "language": "German",
+    "alternativeTitles": [
+      "Wozzeck Berg"
+    ]
+  },
+  {
+    "id": "lulu",
+    "title": "Lulu",
+    "composer": "Alban Berg",
+    "year": 1937,
+    "language": "German",
+    "alternativeTitles": [
+      "Lulu Berg"
+    ]
+  },
+  {
+    "id": "bluebeard",
+    "title": "A kékszakallú herceg vára",
+    "composer": "Bela Bartok",
+    "year": 1918,
+    "language": "Hungarian",
+    "alternativeTitles": [
+      "Bluebeard's Castle",
+      "Duke Bluebeard's Castle"
+    ]
+  },
+  {
+    "id": "lady_macbeth_mtsensk",
+    "title": "Lady Macbeth of Mtsensk",
+    "composer": "Dmitri Shostakovich",
+    "year": 1934,
+    "language": "Russian",
+    "alternativeTitles": [
+      "Ledi Makbet Mtsenskogo uyezda"
+    ]
+  },
+  {
+    "id": "consul",
+    "title": "The Consul",
+    "composer": "Gian Carlo Menotti",
+    "year": 1950,
+    "language": "English",
+    "alternativeTitles": [
+      "Menotti The Consul"
+    ]
+  },
+  {
+    "id": "medium",
+    "title": "The Medium",
+    "composer": "Gian Carlo Menotti",
+    "year": 1946,
+    "language": "English",
+    "alternativeTitles": [
+      "Menotti The Medium"
+    ]
+  },
+  {
+    "id": "belle_helene",
+    "title": "La belle Hélène",
+    "composer": "Jacques Offenbach",
+    "year": 1864,
+    "language": "French",
+    "alternativeTitles": [
+      "La belle Hélène",
+      "The Beautiful Helen"
+    ]
+  },
+  {
+    "id": "ippolito_aricia",
+    "title": "Hippolyte et Aricie",
+    "composer": "Jean-Philippe Rameau",
+    "year": 1733,
+    "language": "French",
+    "alternativeTitles": [
+      "Hippolytus and Aricia"
+    ]
+  },
+  {
+    "id": "armide_lully",
+    "title": "Armide",
+    "composer": "Jean-Baptiste Lully",
+    "year": 1686,
+    "language": "French",
+    "alternativeTitles": [
+      "Armida Lully"
+    ]
+  },
+  {
+    "id": "les_troyens",
+    "title": "Les Troyens",
+    "composer": "Hector Berlioz",
+    "year": 1863,
+    "language": "French",
+    "alternativeTitles": [
+      "The Trojans"
+    ]
+  },
+  {
+    "id": "prince_igor",
+    "title": "Knyaz Igor",
+    "composer": "Alexander Borodin",
+    "year": 1890,
+    "language": "Russian",
+    "alternativeTitles": [
+      "Prince Igor"
+    ]
+  },
+  {
+    "id": "war_peace",
+    "title": "Voyna i mir",
+    "composer": "Sergei Prokofiev",
+    "year": 1946,
+    "language": "Russian",
+    "alternativeTitles": [
+      "War and Peace"
+    ]
+  },
+  {
+    "id": "makropulos",
+    "title": "Vec Makropulos",
+    "composer": "Leos Janacek",
+    "year": 1926,
+    "language": "Czech",
+    "alternativeTitles": [
+      "The Makropulos Affair",
+      "Věc Makropulos"
+    ]
+  },
+  {
+    "id": "rusalka_glinka",
+    "title": "Ruslan i Lyudmila",
+    "composer": "Mikhail Glinka",
+    "year": 1842,
+    "language": "Russian",
+    "alternativeTitles": [
+      "Ruslan and Lyudmila"
+    ]
+  }
+]
