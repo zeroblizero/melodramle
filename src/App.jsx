@@ -191,7 +191,7 @@ function GameBoard({ target, searchPool = operas }) {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([]);
   const [won, setWon] = useState(false);
-  const localSearchIndex = useMemo(() => buildSearchIndex(searchPool), [searchPool]);
+  const filteredSearchIndex = useMemo(() => buildSearchIndex(searchPool), [searchPool]);
 
   useEffect(() => {
     setInput('');
@@ -199,7 +199,7 @@ function GameBoard({ target, searchPool = operas }) {
     setWon(false);
   }, [target.id]);
 
-  const bestMatch = useMemo(() => findBestOperaMatch(input, localSearchIndex), [input, localSearchIndex]);
+  const bestMatch = useMemo(() => findBestOperaMatch(input, filteredSearchIndex), [input, filteredSearchIndex]);
 
   const submitGuess = (opera) => {
     const composerCorrect = opera.composer === target.composer;
