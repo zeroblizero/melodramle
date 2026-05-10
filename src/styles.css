@@ -121,6 +121,27 @@ button {
   gap: 0.6rem;
 }
 
+.year-slider {
+  position: relative;
+  height: 2rem;
+}
+
+.year-slider input[type='range'] {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.year-slider input[type='range']::-webkit-slider-thumb {
+  pointer-events: auto;
+}
+
+.year-slider input[type='range']::-moz-range-thumb {
+  pointer-events: auto;
+}
+
 .practice-actions {
   display: flex;
   gap: 0.6rem;
