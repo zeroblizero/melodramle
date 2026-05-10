@@ -143,6 +143,7 @@ function PracticeMode() {
                   min={minOperaYear}
                   max={maxOperaYear}
                   value={sliderFrom}
+                  aria-label="Minimum year"
                   onChange={(e) => {
                     const value = Math.min(Number(e.target.value), sliderTo);
                     setSliderFrom(value);
@@ -154,6 +155,7 @@ function PracticeMode() {
                   min={minOperaYear}
                   max={maxOperaYear}
                   value={sliderTo}
+                  aria-label="Maximum year"
                   onChange={(e) => {
                     const value = Math.max(Number(e.target.value), sliderFrom);
                     setSliderTo(value);
