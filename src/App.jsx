@@ -9,19 +9,25 @@ const minOperaYear = Math.min(...operas.map((opera) => opera.year));
 const maxOperaYear = Math.max(...operas.map((opera) => opera.year));
 const minimumAutocompleteLetters = 3;
 
-function getGuessCloseness(guess, target) {
-  let score = 0;
-  if (guess.titleCorrect) {
-    score += 1000;
+function getYearRecap(history, targetYear) {
+  if (history.length === 0) {
+    return '❓';
   }
-  if (guess.composerCorrect) {
-    score += 200;
+
+  const guessedYears = history.map((entry) => entry.year);
+  if (guessedYears.length >= 2) {
+    const closestLower = Math.max(...guessedYears.filter((year) => year < targetYear), -Infinity);
+    const closestUpper = Math.min(...guessedYears.filter((year) => year > targetYear), Infinity);
+    if (Number.isFinite(closestLower) && Number.isFinite(closestUpper)) {
+      return `${closestLower}-${closestUpper}`;
+    }
   }
-  if (guess.languageCorrect) {
-    score += 200;
-  }
-  score += Math.max(0, 150 - Math.abs(guess.year - target.year));
-  return score;
+
+  const closestYear = guessedYears.reduce((best, current) =>
+    Math.abs(current - targetYear) < Math.abs(best - targetYear) ? current : best,
+  guessedYears[0]);
+  const feedback = getYearFeedback(closestYear, targetYear);
+  return feedback.isCorrect ? String(closestYear) : `${feedback.symbol} ${closestYear}`;
 }
 
 function App() {
@@ -248,13 +254,15 @@ function GameBoard({ target, searchPool = operas }) {
     }
     return findBestOperaMatch(normalizedInput, filteredSearchIndex);
   }, [normalizedInput, filteredSearchIndex]);
-  const recap = useMemo(
-    () =>
-      [...history]
-        .sort((a, b) => getGuessCloseness(b, target) - getGuessCloseness(a, target))
-        .slice(0, 3),
-    [history, target],
+  const composerUnlocked = useMemo(
+    () => history.some((entry) => entry.composerCorrect),
+    [history],
   );
+  const languageUnlocked = useMemo(
+    () => history.some((entry) => entry.languageCorrect),
+    [history],
+  );
+  const yearRecap = useMemo(() => getYearRecap(history, target.year), [history, target.year]);
 
   const submitGuess = (opera) => {
     if (attemptedOperaIds.has(opera.id)) {
@@ -352,13 +360,15 @@ function GameBoard({ target, searchPool = operas }) {
         <h3>Guess History</h3>
         {history.length > 0 && (
           <div className="recap-box">
-            <strong>Recap closest guesses:</strong>
+            <strong>Recap:</strong>
             <ul>
-              {recap.map((entry) => (
-                <li key={`recap-${entry.id}`}>
-                  {entry.title} · {entry.composer} ({entry.year})
-                </li>
-              ))}
+              <li>
+                Composer: {composerUnlocked ? target.composer : '❓'}
+              </li>
+              <li>
+                Language: {languageUnlocked ? target.language : '❓'}
+              </li>
+              <li>Year: {yearRecap}</li>
             </ul>
           </div>
         )}
