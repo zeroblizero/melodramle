@@ -220,20 +220,19 @@ button {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 2;
 }
 
 .confetti-piece {
-  --left: calc((var(--i) * 17) % 100);
-  --duration: calc(2.4s + (var(--i) % 5) * 0.22s);
   position: absolute;
   top: -10%;
-  left: calc(var(--left) * 1%);
+  left: var(--left);
   width: 0.45rem;
   height: 0.75rem;
   border-radius: 2px;
-  background: hsl(calc((var(--i) * 31) % 360), 95%, 72%);
+  background: hsl(var(--hue), 95%, 72%);
   animation: confetti-fall var(--duration) linear infinite;
-  animation-delay: calc((var(--i) % 7) * -0.35s);
+  animation-delay: var(--delay);
 }
 
 @keyframes confetti-fall {
