@@ -7,6 +7,22 @@ import { filterOperas, getDailyOpera, getRandomOpera, getYearFeedback } from './
 const uniqueLanguages = [...new Set(operas.map((opera) => opera.language))].sort();
 const minOperaYear = Math.min(...operas.map((opera) => opera.year));
 const maxOperaYear = Math.max(...operas.map((opera) => opera.year));
+const minimumAutocompleteLetters = 3;
+
+function getGuessCloseness(guess, target) {
+  let score = 0;
+  if (guess.titleCorrect) {
+    score += 1000;
+  }
+  if (guess.composerCorrect) {
+    score += 200;
+  }
+  if (guess.languageCorrect) {
+    score += 200;
+  }
+  score += Math.max(0, 150 - Math.abs(guess.year - target.year));
+  return score;
+}
 
 function App() {
   // Determine current page for link styling and aria-labels
@@ -119,6 +135,18 @@ function PracticeMode() {
           <div className="filters">
             <div className="filter-block">
               <p>Language</p>
+              <div className="language-actions">
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={() => setSelectedLanguages(uniqueLanguages)}
+                >
+                  Select all
+                </button>
+                <button type="button" className="secondary-button" onClick={() => setSelectedLanguages([])}>
+                  Deselect all
+                </button>
+              </div>
               <div className="language-grid">
                 {uniqueLanguages.map((language) => (
                   <label key={language}>
@@ -200,7 +228,13 @@ function GameBoard({ target, searchPool = operas }) {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([]);
   const [won, setWon] = useState(false);
-  const filteredSearchIndex = useMemo(() => buildSearchIndex(searchPool), [searchPool]);
+  const attemptedOperaIds = useMemo(() => new Set(history.map((entry) => entry.id)), [history]);
+  const availableOperas = useMemo(
+    () => searchPool.filter((opera) => !attemptedOperaIds.has(opera.id)),
+    [searchPool, attemptedOperaIds],
+  );
+  const filteredSearchIndex = useMemo(() => buildSearchIndex(availableOperas), [availableOperas]);
+  const normalizedInput = input.trim();
 
   useEffect(() => {
     setInput('');
@@ -208,28 +242,46 @@ function GameBoard({ target, searchPool = operas }) {
     setWon(false);
   }, [target.id]);
 
-  const bestMatch = useMemo(() => findBestOperaMatch(input, filteredSearchIndex), [input, filteredSearchIndex]);
+  const bestMatch = useMemo(() => {
+    if (normalizedInput.length < minimumAutocompleteLetters) {
+      return null;
+    }
+    return findBestOperaMatch(normalizedInput, filteredSearchIndex);
+  }, [normalizedInput, filteredSearchIndex]);
+  const recap = useMemo(
+    () =>
+      [...history]
+        .sort((a, b) => getGuessCloseness(b, target) - getGuessCloseness(a, target))
+        .slice(0, 3),
+    [history, target],
+  );
 
   const submitGuess = (opera) => {
+    if (attemptedOperaIds.has(opera.id)) {
+      return;
+    }
+
     const composerCorrect = opera.composer === target.composer;
     const languageCorrect = opera.language === target.language;
     const yearFeedback = getYearFeedback(opera.year, target.year);
     const titleCorrect = opera.id === target.id;
 
     setHistory((prev) => [
-        {
-          title: opera.title,
-          composer: opera.composer,
-          language: opera.language,
-          year: opera.year,
-          composerCorrect,
-          languageCorrect,
-          yearFeedback,
+      {
+        id: opera.id,
+        title: opera.title,
+        composer: opera.composer,
+        language: opera.language,
+        year: opera.year,
+        composerCorrect,
+        languageCorrect,
+        titleCorrect,
+        yearFeedback,
       },
       ...prev,
     ]);
 
-    setInput(opera.title);
+    setInput('');
     if (titleCorrect) {
       setWon(true);
     }
@@ -249,7 +301,7 @@ function GameBoard({ target, searchPool = operas }) {
               e.preventDefault();
             }
           }}
-          placeholder="Type an opera title"
+          placeholder="Type at least 3 letters"
           disabled={won}
         />
         {bestMatch ? (
@@ -260,6 +312,10 @@ function GameBoard({ target, searchPool = operas }) {
           >
             Guess: {bestMatch.opera.title}
           </button>
+        ) : normalizedInput.length > 0 && normalizedInput.length < minimumAutocompleteLetters ? (
+          <button className="accent-button" disabled>
+            Type at least 3 letters
+          </button>
         ) : (
           <button className="accent-button" disabled>
             No match found
@@ -268,27 +324,46 @@ function GameBoard({ target, searchPool = operas }) {
       </div>
 
       {won && (
-        <div className="win-panel">
-          <h3>Bravissimo! You guessed it.</h3>
-          <ul>
-            <li>
-              <strong>Title:</strong> {target.title}
-            </li>
-            <li>
-              <strong>Composer:</strong> {target.composer}
-            </li>
-            <li>
-              <strong>Year:</strong> {target.year}
-            </li>
-            <li>
-              <strong>Language:</strong> {target.language}
-            </li>
-          </ul>
+        <div className="win-splash" role="status" aria-live="polite">
+          <div className="confetti-layer" aria-hidden="true">
+            {Array.from({ length: 24 }, (_, idx) => (
+              <span key={idx} className="confetti-piece" style={{ '--i': idx }} />
+            ))}
+          </div>
+          <div className="win-panel">
+            <h3>Bravissimo! You guessed it.</h3>
+            <ul>
+              <li>
+                <strong>Title:</strong> {target.title}
+              </li>
+              <li>
+                <strong>Composer:</strong> {target.composer}
+              </li>
+              <li>
+                <strong>Year:</strong> {target.year}
+              </li>
+              <li>
+                <strong>Language:</strong> {target.language}
+              </li>
+            </ul>
+          </div>
         </div>
       )}
 
       <div>
         <h3>Guess History</h3>
+        {history.length > 0 && (
+          <div className="recap-box">
+            <strong>Recap closest guesses:</strong>
+            <ul>
+              {recap.map((entry) => (
+                <li key={`recap-${entry.id}`}>
+                  {entry.title} · {entry.composer} ({entry.year})
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="table-wrap">
           <table>
             <thead>
