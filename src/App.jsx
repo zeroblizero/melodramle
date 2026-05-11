@@ -333,7 +333,16 @@ function GameBoard({ target, searchPool = operas }) {
         <div className="win-splash" role="status" aria-live="polite">
           <div className="confetti-layer" aria-hidden="true">
             {Array.from({ length: 24 }, (_, idx) => (
-              <span key={idx} className="confetti-piece" style={{ '--i': idx }} />
+              <span
+                key={idx}
+                className="confetti-piece"
+                style={{
+                  '--left': `${(idx * 17) % 100}%`,
+                  '--duration': `${2.4 + (idx % 5) * 0.22}s`,
+                  '--hue': (idx * 31) % 360,
+                  '--delay': `-${(idx % 7) * 0.35}s`,
+                }}
+              />
             ))}
           </div>
           <div className="win-panel">
