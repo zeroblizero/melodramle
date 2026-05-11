@@ -301,7 +301,7 @@ function GameBoard({ target, searchPool = operas }) {
               e.preventDefault();
             }
           }}
-          placeholder="Type at least 3 letters"
+          placeholder={`Type at least ${minimumAutocompleteLetters} letters`}
           disabled={won}
         />
         {bestMatch ? (
@@ -313,9 +313,7 @@ function GameBoard({ target, searchPool = operas }) {
             Guess: {bestMatch.opera.title}
           </button>
         ) : normalizedInput.length > 0 && normalizedInput.length < minimumAutocompleteLetters ? (
-          <button className="accent-button" disabled>
-            Type at least 3 letters
-          </button>
+          <button className="accent-button" disabled>{`Type at least ${minimumAutocompleteLetters} letters`}</button>
         ) : (
           <button className="accent-button" disabled>
             No match found
