@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect } from 'react';
-import { Link, Navigate, Route, Routes } from 'react-router-dom';
+import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import operas from './data/operas.json';
 import { buildSearchIndex, findBestOperaMatch } from './utils/matching';
 import { filterOperas, getDailyOpera, getRandomOpera, getYearFeedback } from './utils/game';
@@ -9,11 +9,24 @@ const minOperaYear = Math.min(...operas.map((opera) => opera.year));
 const maxOperaYear = Math.max(...operas.map((opera) => opera.year));
 
 function App() {
+  // Determine current page for link styling and aria-labels
+  const { pathname } = useLocation();
+  const isPracticePage = pathname === '/practice';
+
   return (
     <div className="app-shell">
       <header className="topbar">
-        <h1>Melodramle</h1>
-        <p>Guess the opera title</p>
+        <span className="title-container" aria-hidden="true">
+          <h1>Melodramle</h1>
+          <p>Guess the opera title</p>
+        </span>
+        <Link
+          className={`mode-link ${isPracticePage ? 'mode-link--home' : 'mode-link--practice'}`}
+          to={isPracticePage ? '/' : '/practice'}
+          aria-label={isPracticePage ? 'Back to Opera of the Day' : 'Go to Practice Mode'}
+        >
+          {isPracticePage ? 'Back to Opera of the Day' : 'Go to Practice Mode'}
+        </Link>
       </header>
       <main className="main-content">
         <Routes>
@@ -32,9 +45,6 @@ function DailyMode() {
     <section>
       <div className="mode-header">
         <h2>Opera of the Day</h2>
-        <Link className="mode-link" to="/practice">
-          Go to Practice Mode
-        </Link>
       </div>
       <GameBoard target={target} />
     </section>
@@ -101,9 +111,6 @@ function PracticeMode() {
     <section>
       <div className="mode-header">
         <h2>Practice Mode</h2>
-        <Link className="mode-link" to="/">
-          Back to Opera of the Day
-        </Link>
       </div>
 
       {!hasStarted ? (
