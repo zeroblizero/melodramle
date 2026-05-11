@@ -133,6 +133,13 @@ button {
   gap: 0.5rem;
 }
 
+.language-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
 .year-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -145,6 +152,7 @@ button {
 }
 
 .year-slider input[type='range'] {
+  appearance: none;
   position: absolute;
   width: 100%;
   inset: 0;
@@ -152,11 +160,35 @@ button {
   pointer-events: none;
 }
 
+.year-slider input[type='range']::-webkit-slider-runnable-track {
+  height: 0.3rem;
+  border-radius: 999px;
+  background: #f5e8c7;
+}
+
 .year-slider input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  margin-top: -0.35rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid #9f7b3e;
+  background: #f2c66d;
   pointer-events: auto;
 }
 
+.year-slider input[type='range']::-moz-range-track {
+  height: 0.3rem;
+  border-radius: 999px;
+  background: #f5e8c7;
+}
+
 .year-slider input[type='range']::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid #9f7b3e;
+  background: #f2c66d;
   pointer-events: auto;
 }
 
@@ -172,7 +204,65 @@ button {
   border-radius: 10px;
   background: #2a1f12;
   padding: 0.9rem;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.win-splash {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
   margin-bottom: 1rem;
+}
+
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  --left: calc((var(--i) * 17) % 100);
+  --duration: calc(2.4s + (var(--i) % 5) * 0.22s);
+  position: absolute;
+  top: -10%;
+  left: calc(var(--left) * 1%);
+  width: 0.45rem;
+  height: 0.75rem;
+  border-radius: 2px;
+  background: hsl(calc((var(--i) * 31) % 360), 95%, 72%);
+  animation: confetti-fall var(--duration) linear infinite;
+  animation-delay: calc((var(--i) % 7) * -0.35s);
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(280px) rotate(660deg);
+    opacity: 0;
+  }
+}
+
+.recap-box {
+  border: 1px solid #7a5b2a;
+  border-radius: 8px;
+  background: #24190f;
+  padding: 0.75rem;
+  margin-bottom: 0.7rem;
+}
+
+.recap-box ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
 }
 
 .win-panel ul {
