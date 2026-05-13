@@ -135,6 +135,7 @@ button {
 .accent-button {
   background: linear-gradient(180deg, #f2c66d, #c3933f);
   color: #1f1309;
+  margin-top: 1rem;
 }
 
 .secondary-button {
@@ -152,6 +153,12 @@ button {
   gap: 1rem;
 }
 
+.filter-block-header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
 .language-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -163,6 +170,7 @@ button {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-bottom: 0.6rem;
+  margin-left: 0.6rem;
 }
 
 .year-row {
@@ -172,49 +180,49 @@ button {
 }
 
 .year-slider {
-  position: relative;
-  height: 2rem;
-}
-
-.year-slider input[type='range'] {
-  appearance: none;
-  position: absolute;
   width: 100%;
-  inset: 0;
-  background: transparent;
-  pointer-events: none;
 }
 
-.year-slider input[type='range']::-webkit-slider-runnable-track {
-  height: 0.3rem;
+.year-slider-track-wrap {
+  display: flex;
+  width: 100%;
+  height: 2.3rem;
+}
+
+.year-slider-track {
+  align-self: center;
+  width: 100%;
+  height: 0.36rem;
   border-radius: 999px;
-  background: #f5e8c7;
 }
 
-.year-slider input[type='range']::-webkit-slider-thumb {
-  appearance: none;
-  margin-top: -0.35rem;
+.year-slider-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 1rem;
   height: 1rem;
-  border-radius: 50%;
   border: 1px solid #9f7b3e;
+  border-radius: 50%;
   background: #f2c66d;
-  pointer-events: auto;
+  box-shadow: 0 0 0 1px rgba(42, 30, 19, 0.25);
+  outline: none;
 }
 
-.year-slider input[type='range']::-moz-range-track {
-  height: 0.3rem;
-  border-radius: 999px;
-  background: #f5e8c7;
+.year-slider-thumb--dragged {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px rgba(242, 198, 109, 0.35);
 }
 
-.year-slider input[type='range']::-moz-range-thumb {
-  width: 1rem;
-  height: 1rem;
+.year-slider-thumb:focus-visible {
+  box-shadow: 0 0 0 3px rgba(242, 198, 109, 0.45);
+}
+
+.year-slider-thumb-core {
+  width: 0.35rem;
+  height: 0.35rem;
   border-radius: 50%;
-  border: 1px solid #9f7b3e;
-  background: #f2c66d;
-  pointer-events: auto;
+  background: #2a1e13;
 }
 
 .practice-actions {

@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect } from 'react';
+import { Range, getTrackBackground } from 'react-range';
 import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import operas from './data/operas.json';
 import { buildSearchIndex, findBestOperaMatch } from './utils/matching';
@@ -7,6 +8,7 @@ import { filterOperas, getDailyOpera, getRandomOpera, getYearFeedback } from './
 const uniqueLanguages = [...new Set(operas.map((opera) => opera.language))].sort();
 const minOperaYear = Math.min(...operas.map((opera) => opera.year));
 const maxOperaYear = Math.max(...operas.map((opera) => opera.year));
+const yearSliderStep = 1;
 const minimumAutocompleteLetters = 3;
 const easterEggOperaId = 'la_donna_del_lago';
 const easterEggWikiUrl = 'https://it.wikipedia.org/wiki/La_donna_del_lago_(Rossini)';
@@ -120,6 +122,25 @@ function PracticeMode() {
     );
   };
 
+  // Ensures the "from" and "to" values are within valid bounds and that "from" is not greater than "to". Returns the normalized range as an array [normalizedFrom, normalizedTo].
+  const normalizeYearRange = (nextFrom, nextTo) => {
+    const clampedFrom = Math.min(maxOperaYear, Math.max(minOperaYear, nextFrom));
+    const clampedTo = Math.min(maxOperaYear, Math.max(minOperaYear, nextTo));
+    return [Math.min(clampedFrom, clampedTo), Math.max(clampedFrom, clampedTo)];
+  };
+
+  // Syncs the "from" and "to" values together, ensuring the range remains valid. If syncTextInputs is true, also updates the text inputs to match the new slider values.
+  const syncYearRange = (nextFrom, nextTo, syncTextInputs = false) => {
+    const [normalizedFrom, normalizedTo] = normalizeYearRange(nextFrom, nextTo);
+    setSliderFrom(normalizedFrom);
+    setSliderTo(normalizedTo);
+    if (syncTextInputs) {
+      setFrom(String(normalizedFrom));
+      setTo(String(normalizedTo));
+    }
+  };
+
+  // When the "from" input changes, validate and normalize the value, then update the slider and potentially sync the "to" value if the new "from" exceeds it.
   const updateFromInput = (value) => {
     setFrom(value);
     if (value === '') {
@@ -129,10 +150,16 @@ function PracticeMode() {
     if (!Number.isFinite(parsed)) {
       return;
     }
-    const clamped = Math.max(minOperaYear, Math.min(parsed, sliderTo));
-    setSliderFrom(clamped);
+    // If the new "from" value exceeds the current "to", sync both to the same value to avoid an invalid range
+    const clampedFrom = Math.min(maxOperaYear, Math.max(minOperaYear, parsed));
+    if (clampedFrom > sliderTo) {
+      syncYearRange(clampedFrom, clampedFrom, true);
+      return;
+    }
+    setSliderFrom(clampedFrom);
   };
 
+  // When the "to" input changes, validate and normalize the value, then update the slider and potentially sync the "from" value if the new "to" is less than it.
   const updateToInput = (value) => {
     setTo(value);
     if (value === '') {
@@ -142,8 +169,19 @@ function PracticeMode() {
     if (!Number.isFinite(parsed)) {
       return;
     }
-    const clamped = Math.min(maxOperaYear, Math.max(parsed, sliderFrom));
-    setSliderTo(clamped);
+    // If the new "to" value is less than the current "from", sync both to the same value to avoid an invalid range
+    const clampedTo = Math.min(maxOperaYear, Math.max(minOperaYear, parsed));
+    if (clampedTo < sliderFrom) {
+      syncYearRange(clampedTo, clampedTo, true);
+      return;
+    }
+    setSliderTo(clampedTo);
+  };
+
+  // When the slider values change, normalize them and sync the text inputs to match the new slider values.
+  const updateSliderValues = (values) => {
+    const [nextFrom, nextTo] = values;
+    syncYearRange(nextFrom, nextTo, true);
   };
 
   return (
@@ -154,21 +192,23 @@ function PracticeMode() {
 
       {!hasStarted ? (
         <div className="panel">
-          <h3>Filters before starting</h3>
+          <h3>Filters</h3>
           <div className="filters">
             <div className="filter-block">
-              <p>Language</p>
-              <div className="language-actions">
-                <button
-                  type="button"
-                  className="secondary-button"
-                  onClick={() => setSelectedLanguages(uniqueLanguages)}
-                >
-                  Select all
-                </button>
-                <button type="button" className="secondary-button" onClick={() => setSelectedLanguages([])}>
-                  Deselect all
-                </button>
+              <div className="filter-block-header">
+                <span>Language</span>
+                <span className="language-actions">
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() => setSelectedLanguages(uniqueLanguages)}
+                  >
+                    Select all
+                  </button>
+                  <button type="button" className="secondary-button" onClick={() => setSelectedLanguages([])}>
+                    Deselect all
+                  </button>
+                </span>
               </div>
               <div className="language-grid">
                 {uniqueLanguages.map((language) => (
@@ -196,29 +236,44 @@ function PracticeMode() {
             <div className="filter-block">
               <p>Year range slider</p>
               <div className="year-slider">
-                <input
-                  type="range"
+                <Range
+                  values={[sliderFrom, sliderTo]}
+                  step={yearSliderStep}
                   min={minOperaYear}
                   max={maxOperaYear}
-                  value={sliderFrom}
-                  aria-label="Minimum year"
-                  onChange={(e) => {
-                    const value = Math.min(Number(e.target.value), sliderTo);
-                    setSliderFrom(value);
-                    setFrom(String(value));
-                  }}
-                />
-                <input
-                  type="range"
-                  min={minOperaYear}
-                  max={maxOperaYear}
-                  value={sliderTo}
-                  aria-label="Maximum year"
-                  onChange={(e) => {
-                    const value = Math.max(Number(e.target.value), sliderFrom);
-                    setSliderTo(value);
-                    setTo(String(value));
-                  }}
+                  onChange={updateSliderValues}
+                  renderTrack={({ props, children }) => (
+                    <div
+                      className="year-slider-track-wrap"
+                      onMouseDown={props.onMouseDown}
+                      onTouchStart={props.onTouchStart}
+                      style={props.style}
+                    >
+                      <div
+                        ref={props.ref}
+                        className="year-slider-track"
+                        style={{
+                          background: getTrackBackground({
+                            values: [sliderFrom, sliderTo],
+                            colors: ['#f5e8c7', '#f2c66d', '#f5e8c7'],
+                            min: minOperaYear,
+                            max: maxOperaYear,
+                          }),
+                        }}
+                      >
+                        {children}
+                      </div>
+                    </div>
+                  )}
+                  renderThumb={({ props, index, isDragged }) => (
+                    <div
+                      {...props}
+                      className={`year-slider-thumb ${isDragged ? 'year-slider-thumb--dragged' : ''}`}
+                      aria-label={index === 0 ? 'Minimum year' : 'Maximum year'}
+                    >
+                      <span className="year-slider-thumb-core" />
+                    </div>
+                  )}
                 />
               </div>
             </div>
