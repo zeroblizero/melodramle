@@ -85,6 +85,7 @@ body {
 
 .mode-link {
   color: #ffd88a;
+  position: absolute
 }
 
 .mode-link:hover {
@@ -277,11 +278,8 @@ button {
   margin-bottom: 0.7rem;
 }
 
-.recap-box ul {
-  margin: 0.5rem 0 0;
-  padding-left: 1.1rem;
-  display: grid;
-  gap: 0.35rem;
+.recap-table-wrap {
+  margin-top: 0.5rem;
 }
 
 .win-panel ul {

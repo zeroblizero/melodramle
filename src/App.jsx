@@ -35,6 +35,7 @@ function App() {
   const { pathname } = useLocation();
   const isPracticePage = pathname === '/practice';
 
+  // Main app shell with header, main content area for routes, and footer
   return (
     <div className="app-shell">
       <header className="topbar">
@@ -74,6 +75,7 @@ function App() {
   );
 }
 
+// Selects the daily opera
 function DailyMode() {
   const target = useMemo(() => getDailyOpera(operas), []);
   return (
@@ -320,6 +322,7 @@ function GameBoard({ target, searchPool = operas }) {
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               e.preventDefault();
+              submitGuess(bestMatch.opera);
             }
           }}
           placeholder={`Type at least ${minimumAutocompleteLetters} letters`}
@@ -379,21 +382,30 @@ function GameBoard({ target, searchPool = operas }) {
       )}
 
       <div>
-        <h3>Guess History</h3>
-        {history.length > 0 && (
+        {history.length > 0 && !won && (
           <div className="recap-box">
             <strong>Recap:</strong>
-            <ul>
-              <li>
-                Composer: {composerUnlocked ? target.composer : '❓'}
-              </li>
-              <li>
-                Language: {languageUnlocked ? target.language : '❓'}
-              </li>
-              <li>Year: {yearRecap}</li>
-            </ul>
+            <div className="table-wrap recap-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Composer</th>
+                    <th>Language</th>
+                    <th>Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{composerUnlocked ? target.composer : '❓'}</td>
+                    <td>{languageUnlocked ? target.language : '❓'}</td>
+                    <td>{yearRecap}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
+        <h3>Guess History</h3>
         <div className="table-wrap">
           <table>
             <thead>
