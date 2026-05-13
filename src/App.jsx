@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from 'react';
 import { Range, getTrackBackground } from 'react-range';
 import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import operas from './data/operas.json';
 import { buildSearchIndex, findBestOperaMatch } from './utils/matching';
 import { filterOperas, getDailyOpera, getRandomOpera, getYearFeedback } from './utils/game';
@@ -75,6 +76,7 @@ function App() {
           </svg>
         </a>
       </footer>
+      <Analytics />
     </div>
   );
 }
