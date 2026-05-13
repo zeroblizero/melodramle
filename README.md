@@ -1,22 +1,16 @@
 # Melodramle
 
-Melodramle is a Wordle-style opera guessing game built with React + Vite.
+Melodramle is a Wordle-style Opera guessing game built with React + Vite.
+Try to guess the hidden opera in as few attempts as possible, using the clues about  language, composer and year of composition gathered from each guess.
 
 ## Modes
 
-- **Opera of the Day** (`/`): deterministic daily opera target for all users.
-- **Practice Mode** (`/practice`): random target from optionally filtered pool (language and year range).
+- **Opera of the Day** (`/`): test your Opera knowledge by guessing a selected opera
+- **Practice Mode** (`/practice`): play unlimited rounds picking your preferred languages and time range.
 
 ## Run locally
 
 ```bash
 npm install
 npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-npm run preview
 ```
