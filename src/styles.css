@@ -306,6 +306,133 @@ td {
   padding: 0.6rem;
 }
 
+.guess-title-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.lake-lady-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  border: 1px solid #efe4c4;
+  background: linear-gradient(180deg, #6bc7c8, #2f8d98);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lake-lady-link::before,
+.lake-lady-link::after {
+  content: '';
+  position: absolute;
+  left: -55%;
+  width: 210%;
+  height: 58%;
+  border-top: 1.5px solid rgba(239, 247, 255, 0.9);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.lake-lady-link::before {
+  top: 52%;
+  animation: lake-water-drift 2.9s linear infinite;
+}
+
+.lake-lady-link::after {
+  top: 65%;
+  opacity: 100%;
+  border-color: lightblue;
+  animation: lake-water-drift 4s linear infinite reverse;
+}
+
+.lake-lady-link:hover,
+.lake-lady-link:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 2px rgba(242, 198, 109, 0.35);
+}
+
+.lake-lady-icon {
+  position: relative;
+  z-index: 1;
+  width: 0.9rem;
+  height: 1rem;
+  display: inline-block;
+}
+
+.lake-lady-head {
+  position: absolute;
+  left: 0.31rem;
+  top: 0.02rem;
+  width: 0.3rem;
+  height: 0.31rem;
+  border-radius: 50%;
+  background: #f3d2b2;
+  border: 1px solid #6d4a2b;
+}
+
+.lake-lady-body {
+  position: absolute;
+  left: 0.24rem;
+  top: 0.28rem;
+  width: 0.42rem;
+  height: 0.56rem;
+  border-radius: 0.16rem;
+  background: linear-gradient(180deg, #3deab6, #9ff3d5);
+  border: 1px solid #20616a;
+}
+
+.lake-lady-arm {
+  position: absolute;
+  left: 0.11rem;
+  top: 0.38rem;
+  width: 0.3rem;
+  height: 0.1rem;
+  border-radius: 999px;
+  background: #f3d2b2;
+  transform-origin: right center;
+}
+
+.lake-lady-link:hover .lake-lady-arm,
+.lake-lady-link:focus-visible .lake-lady-arm {
+  animation: lake-lady-wave 0.8s ease-in-out infinite;
+}
+
+@keyframes lake-lady-wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(24deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes lake-water-drift {
+  0% {
+    transform: translateX(-16%) translateY(0);
+  }
+  50% {
+    transform: translateX(16%) translateY(-1px);
+  }
+  100% {
+    transform: translateX(-16%) translateY(0);
+  }
+}
+
 .good {
   color: #7be495;
   font-weight: 700;
@@ -362,5 +489,14 @@ td {
   th,
   td {
     font-size: 0.92rem;
+  }
+
+  .lake-lady-link {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
+  .lake-lady-link:active .lake-lady-arm {
+    animation: lake-lady-wave 0.6s ease-in-out;
   }
 }

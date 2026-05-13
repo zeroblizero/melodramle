@@ -8,6 +8,8 @@ const uniqueLanguages = [...new Set(operas.map((opera) => opera.language))].sort
 const minOperaYear = Math.min(...operas.map((opera) => opera.year));
 const maxOperaYear = Math.max(...operas.map((opera) => opera.year));
 const minimumAutocompleteLetters = 3;
+const easterEggOperaId = 'la_donna_del_lago';
+const easterEggWikiUrl = 'https://it.wikipedia.org/wiki/La_donna_del_lago_(Rossini)';
 
 function getYearRecap(history, targetYear) {
   if (history.length === 0) {
@@ -424,7 +426,27 @@ function GameBoard({ target, searchPool = operas }) {
               ) : (
                 history.map((entry, idx) => (
                   <tr key={`${entry.title}-${idx}`}>
-                    <td>{entry.title}</td>
+                    <td>
+                      <span className="guess-title-cell">
+                        <span>{entry.title}</span>
+                        {entry.id === easterEggOperaId && (
+                          <a
+                            className="lake-lady-link"
+                            href={easterEggWikiUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Open La donna del lago on Wikipedia"
+                            title="La donna del lago su Wikipedia"
+                          >
+                            <span className="lake-lady-icon" aria-hidden="true">
+                              <span className="lake-lady-head" />
+                              <span className="lake-lady-body" />
+                              <span className="lake-lady-arm" />
+                            </span>
+                          </a>
+                        )}
+                      </span>
+                    </td>
                     <td className={entry.composerCorrect ? 'good' : 'bad'}>
                       {entry.composerCorrect ? '✅' : `❌ ${entry.composer}`}
                     </td>
