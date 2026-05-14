@@ -2,15 +2,15 @@ export const getYearFeedback = (guessYear, targetYear) => {
   const diff = targetYear - guessYear;
 
   if (diff === 0) {
-    return { symbol: '✅', isCorrect: true };
+    return { symbol: '✅', isCorrect: true , isClose: false };
   }
 
   const direction = diff > 0 ? '⬆️' : '⬇️';
   if (Math.abs(diff) < 10) {
-    return { symbol: `🔥${direction}`, isCorrect: false };
+    return { symbol: `🔥${direction}`, isCorrect: false, isClose: true };
   }
 
-  return { symbol: direction, isCorrect: false };
+  return { symbol: direction, isCorrect: false, isClose: false };
 };
 
 const hashDateString = (value) => {

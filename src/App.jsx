@@ -46,7 +46,7 @@ function App() {
       <header className="topbar">
         <span className="title-container" aria-hidden="true">
           <h1>Melodramle</h1>
-          <p>Guess the opera title</p>
+          <p>Guess the Opera title</p>
         </span>
         <Link
           className={`mode-link ${isPracticePage ? 'mode-link--home' : 'mode-link--practice'}`}
@@ -510,7 +510,7 @@ function GameBoard({ target, searchPool = operas }) {
                     <td className={entry.languageCorrect ? 'good' : 'bad'}>
                       {entry.language}
                     </td>
-                    <td className={entry.yearFeedback.isCorrect ? 'good' : 'bad'}>
+                    <td className={entry.yearFeedback.isCorrect ? 'good' : entry.yearFeedback.isClose ? 'mid' : 'bad'}>
                       {entry.yearFeedback.symbol} {entry.year}
                     </td>
                   </tr>
