@@ -257,7 +257,7 @@ function PracticeMode() {
                         style={{
                           background: getTrackBackground({
                             values: [sliderFrom, sliderTo],
-                            colors: ['#f5e8c7', '#f2c66d', '#f5e8c7'],
+                            colors: ['#f4dfb7', '#e2b24f', '#f4dfb7'],
                             min: minOperaYear,
                             max: maxOperaYear,
                           }),
