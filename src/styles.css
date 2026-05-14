@@ -478,7 +478,7 @@ td {
     font-size: 0;
     color: transparent;
     background: linear-gradient(180deg, #f2c66d, #c3933f);
-    position: relative;
+    position: absolute;
   }
 
   .topbar .mode-link::before {

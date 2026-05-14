@@ -505,13 +505,13 @@ function GameBoard({ target, searchPool = operas }) {
                       </span>
                     </td>
                     <td className={entry.composerCorrect ? 'good' : 'bad'}>
-                      {entry.composerCorrect ? '✅' : `❌ ${entry.composer}`}
+                      {entry.composer}
                     </td>
                     <td className={entry.languageCorrect ? 'good' : 'bad'}>
-                      {entry.languageCorrect ? '✅' : `❌ ${entry.language}`}
+                      {entry.language}
                     </td>
                     <td className={entry.yearFeedback.isCorrect ? 'good' : 'bad'}>
-                      {entry.yearFeedback.isCorrect ? '✅' : `${entry.yearFeedback.symbol} ${entry.year}`}
+                      {entry.yearFeedback.symbol} {entry.year}
                     </td>
                   </tr>
                 ))
