@@ -1,5 +1,21 @@
 [
   {
+    "id": "dafne",
+    "title": "Dafne",
+    "composer": "Jacopo Peri",
+    "year": 1597,
+    "language": "Italian",
+    "alternativeTitles": []
+  },
+  {
+    "id": "euridice",
+    "title": "Euridice",
+    "composer": "Jacopo Peri",
+    "year": 1600,
+    "language": "Italian",
+    "alternativeTitles": []
+  },
+  {
     "id": "l_orfeo",
     "title": "L'Orfeo",
     "composer": "Claudio Monteverdi",
@@ -48,12 +64,25 @@
     "alternativeTitles": []
   },
   {
+    "id": "achille_et_polyx_ne",
+    "title": "Achille et Polyxène",
+    "composer": "Jean-Baptiste Lully",
+    "year": 1687,
+    "language": "French",
+    "alternativeTitles": [
+      "Achille e Polissena",
+      "Shpalman"
+    ]
+  },
+  {
     "id": "dido_and_aeneas",
     "title": "Dido and Aeneas",
     "composer": "Henry Purcell",
     "year": 1689,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Didone e Enea"
+    ]
   },
   {
     "id": "the_fairy_queen",
@@ -61,7 +90,9 @@
     "composer": "Henry Purcell",
     "year": 1692,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "La regina delle fate"
+    ]
   },
   {
     "id": "agrippina",
@@ -109,7 +140,9 @@
     "composer": "John Gay",
     "year": 1728,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "L'opera del mendicante"
+    ]
   },
   {
     "id": "acis_and_galatea",
@@ -117,7 +150,9 @@
     "composer": "George Frideric Handel",
     "year": 1718,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Aci e Galatea"
+    ]
   },
   {
     "id": "orlando",
@@ -143,7 +178,9 @@
     "composer": "Jean-Philippe Rameau",
     "year": 1733,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Ippolito ed Aricia"
+    ]
   },
   {
     "id": "ariodante",
@@ -167,7 +204,9 @@
     "composer": "Jean-Philippe Rameau",
     "year": 1735,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Le Indie Galanti"
+    ]
   },
   {
     "id": "castor_et_pollux",
@@ -175,7 +214,9 @@
     "composer": "Jean-Philippe Rameau",
     "year": 1737,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Castore e Polluce"
+    ]
   },
   {
     "id": "serse",
@@ -183,7 +224,9 @@
     "composer": "George Frideric Handel",
     "year": 1738,
     "language": "Italian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Xerxes"
+    ]
   },
   {
     "id": "semele",
@@ -225,7 +268,9 @@
     "composer": "Thomas Arne",
     "year": 1762,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Artaserse"
+    ]
   },
   {
     "id": "alceste",
@@ -241,7 +286,9 @@
     "composer": "Wolfgang Amadeus Mozart",
     "year": 1768,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Bastiano e Bastiana"
+    ]
   },
   {
     "id": "mitridate__re_di_ponto",
@@ -307,7 +354,9 @@
     "composer": "Christoph Willibald Gluck",
     "year": 1779,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Ifigenia in Tauride"
+    ]
   },
   {
     "id": "idomeneo",
@@ -323,7 +372,9 @@
     "composer": "Wolfgang Amadeus Mozart",
     "year": 1782,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Il ratto del seraglio"
+    ]
   },
   {
     "id": "der_schauspieldirektor",
@@ -332,7 +383,8 @@
     "year": 1786,
     "language": "German",
     "alternativeTitles": [
-      "The Impresario"
+      "The Impresario",
+      "L'impresario Teatrale"
     ]
   },
   {
@@ -342,7 +394,9 @@
     "year": 1786,
     "language": "Italian",
     "alternativeTitles": [
-      "The Marriage of Figaro"
+      "The Marriage of Figaro",
+      "Die Hochzeit des Figaro",
+      "Las bodas de Fígaro"
     ]
   },
   {
@@ -354,6 +408,14 @@
     "alternativeTitles": [
       "Il dissoluto punito, ossia il Don Giovanni"
     ]
+  },
+  {
+    "id": "nina",
+    "title": "Nina, o sia La pazza per amore",
+    "composer": "Giovanni Paisiello",
+    "year": 1789,
+    "language": "Italian",
+    "alternativeTitles": []
   },
   {
     "id": "cos__fan_tutte",
@@ -383,7 +445,8 @@
     "year": 1791,
     "language": "German",
     "alternativeTitles": [
-      "The Magic Flute"
+      "The Magic Flute",
+      "Il Flauto magico"
     ]
   },
   {
@@ -402,7 +465,9 @@
     "composer": "Luigi Cherubini",
     "year": 1797,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Medea"
+    ]
   },
   {
     "id": "fidelio",
@@ -503,7 +568,8 @@
     "year": 1819,
     "language": "Italian",
     "alternativeTitles": [
-      "The Lady of the Lake"
+      "The Lady of the Lake",
+      "Per il meme"
     ]
   },
   {
@@ -513,7 +579,8 @@
     "year": 1821,
     "language": "German",
     "alternativeTitles": [
-      "The Marksman or The Freeshooter"
+      "The Marksman or The Freeshooter",
+      "Il franco tiratore"
     ]
   },
   {
@@ -539,7 +606,18 @@
     "year": 1825,
     "language": "French",
     "alternativeTitles": [
-      "The White Lady"
+      "The White Lady",
+      "La dama bianca"
+    ]
+  },
+  {
+    "id": "il_viaggio_a_reims",
+    "title": "Il viaggio a Reims",
+    "composer": "Gioachino Rossini",
+    "year": 1825,
+    "language": "Italian",
+    "alternativeTitles": [
+      "The Journey to Reims"
     ]
   },
   {
@@ -549,7 +627,8 @@
     "year": 1826,
     "language": "French",
     "alternativeTitles": [
-      "The Siege of Corinth"
+      "The Siege of Corinth",
+      "L'assedio di Corinto"
     ]
   },
   {
@@ -577,7 +656,8 @@
     "year": 1828,
     "language": "German",
     "alternativeTitles": [
-      "The Vampire"
+      "The Vampire",
+      "Il vampiro"
     ]
   },
   {
@@ -586,7 +666,9 @@
     "composer": "Gioachino Rossini",
     "year": 1828,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Il conte Ory"
+    ]
   },
   {
     "id": "la_straniera",
@@ -603,7 +685,8 @@
     "year": 1829,
     "language": "French",
     "alternativeTitles": [
-      "William Tell"
+      "William Tell",
+      "Gugliemo Tell"
     ]
   },
   {
@@ -700,7 +783,9 @@
     "composer": "Richard Wagner",
     "year": 1836,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Il divieto d'amare"
+    ]
   },
   {
     "id": "i_puritani",
@@ -734,7 +819,12 @@
     "composer": "Mikhail Glinka",
     "year": 1836,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Ivan Susanin",
+      "Жизнь за царя",
+      "Zhizn za tsarya",
+      "Una vita per lo zar"
+    ]
   },
   {
     "id": "les_huguenots",
@@ -742,7 +832,9 @@
     "composer": "Giacomo Meyerbeer",
     "year": 1836,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Gli Ugonotti"
+    ]
   },
   {
     "id": "roberto_devereux",
@@ -776,7 +868,9 @@
     "composer": "Gaetano Donizetti",
     "year": 1840,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "La favorita"
+    ]
   },
   {
     "id": "la_fille_du_r_giment",
@@ -784,7 +878,9 @@
     "composer": "Gaetano Donizetti",
     "year": 1840,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "La figlia del reggimento"
+    ]
   },
   {
     "id": "un_giorno_di_regno",
@@ -812,7 +908,9 @@
     "composer": "Giuseppe Verdi",
     "year": 1842,
     "language": "Italian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Nabucodonosor"
+    ]
   },
   {
     "id": "rienzi",
@@ -828,7 +926,10 @@
     "composer": "Mikhail Glinka",
     "year": 1842,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Руслан и Людмила",
+      "Ruslan i Lyudmila"
+    ]
   },
   {
     "id": "der_fliegende_holl_nder",
@@ -837,7 +938,8 @@
     "year": 1843,
     "language": "German",
     "alternativeTitles": [
-      "The Flying Dutchman"
+      "The Flying Dutchman",
+      "L'olandese volante"
     ]
   },
   {
@@ -864,7 +966,9 @@
     "composer": "Michael Balfe",
     "year": 1843,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "La zingara"
+    ]
   },
   {
     "id": "ernani",
@@ -881,7 +985,8 @@
     "year": 1845,
     "language": "German",
     "alternativeTitles": [
-      "Tannhäuser"
+      "Tannhäuser",
+      "Tannhauser"
     ]
   },
   {
@@ -898,7 +1003,10 @@
     "composer": "Hector Berlioz",
     "year": 1845,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Damnation of Faust",
+      "La dannazione di Faust"
+    ]
   },
   {
     "id": "macbeth",
@@ -923,7 +1031,8 @@
     "year": 1849,
     "language": "German",
     "alternativeTitles": [
-      "The Merry Wives of Windsor"
+      "The Merry Wives of Windsor",
+      "Le allegre comari di Windsor"
     ]
   },
   {
@@ -932,7 +1041,10 @@
     "composer": "Giacomo Meyerbeer",
     "year": 1849,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Prophet",
+      "Il profeta"
+    ]
   },
   {
     "id": "luisa_miller",
@@ -996,7 +1108,9 @@
     "composer": "Giuseppe Verdi",
     "year": 1855,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "I vespri siciliani"
+    ]
   },
   {
     "id": "der_barbier_von_bagdad",
@@ -1014,7 +1128,10 @@
     "composer": "Jacques Offenbach",
     "year": 1858,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Orpheus in the Underworld",
+      "Orfeo all'inferno"
+    ]
   },
   {
     "id": "les_troyens",
@@ -1022,7 +1139,10 @@
     "composer": "Hector Berlioz",
     "year": 1863,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Trojans",
+      "I Troiani"
+    ]
   },
   {
     "id": "faust",
@@ -1048,7 +1168,9 @@
     "composer": "Hector Berlioz",
     "year": 1862,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Beatrice and Benedict"
+    ]
   },
   {
     "id": "la_forza_del_destino",
@@ -1056,7 +1178,11 @@
     "composer": "Giuseppe Verdi",
     "year": 1862,
     "language": "Italian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Force of Destiny",
+      "Forza del destino",
+      "L'opera il cui nome non si può pronunciare"
+    ]
   },
   {
     "id": "les_p_cheurs_de_perles",
@@ -1064,7 +1190,10 @@
     "composer": "Georges Bizet",
     "year": 1863,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Pearl Fishers",
+      "I pescatori di perle"
+    ]
   },
   {
     "id": "la_belle_h_l_ne",
@@ -1072,7 +1201,10 @@
     "composer": "Jacques Offenbach",
     "year": 1864,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Beautiful Helen",
+      "La bella Elena"
+    ]
   },
   {
     "id": "mireille",
@@ -1080,7 +1212,9 @@
     "composer": "Charles Gounod",
     "year": 1864,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Mirella"
+    ]
   },
   {
     "id": "l_africaine",
@@ -1089,7 +1223,9 @@
     "year": 1865,
     "language": "French",
     "alternativeTitles": [
-      "(Vasco de Gama)"
+      "(Vasco de Gama)",
+      "The African",
+      "L'africana"
     ]
   },
   {
@@ -1098,7 +1234,10 @@
     "composer": "Richard Wagner",
     "year": 1865,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Tristan and Isolde",
+      "Tristano e Isotta"
+    ]
   },
   {
     "id": "mignon",
@@ -1106,7 +1245,10 @@
     "composer": "Ambroise Thomas",
     "year": 1866,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Mignonne",
+      "Mignone"
+    ]
   },
   {
     "id": "the_bartered_bride",
@@ -1114,7 +1256,10 @@
     "composer": "Bedřich Smetana",
     "year": 1866,
     "language": "Czech",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Prodaná nevěsta",
+      "La sposa venduta"
+    ]
   },
   {
     "id": "don_carlos",
@@ -1122,7 +1267,9 @@
     "composer": "Giuseppe Verdi",
     "year": 1867,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Don Carlo"
+    ]
   },
   {
     "id": "la_jolie_fille_de_perth",
@@ -1140,7 +1287,10 @@
     "composer": "Charles Gounod",
     "year": 1867,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Romeo and Juliet",
+      "Romeo e Giulietta"
+    ]
   },
   {
     "id": "dalibor",
@@ -1157,7 +1307,8 @@
     "year": 1868,
     "language": "German",
     "alternativeTitles": [
-      "The Mastersingers of Nuremberg"
+      "The Mastersingers of Nuremberg",
+      "I maestri cantori di Norimberga"
     ]
   },
   {
@@ -1190,7 +1341,10 @@
     "composer": "Richard Wagner",
     "year": 1869,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Rhinegold",
+      "L'oro del Reno"
+    ]
   },
   {
     "id": "die_walk_re",
@@ -1199,7 +1353,8 @@
     "year": 1870,
     "language": "German",
     "alternativeTitles": [
-      "The Valkyrie"
+      "The Valkyrie",
+      "La valchiria"
     ]
   },
   {
@@ -1216,7 +1371,9 @@
     "composer": "Modest Mussorgsky",
     "year": 1874,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Борис Годунов"
+    ]
   },
   {
     "id": "die_fledermaus",
@@ -1224,7 +1381,10 @@
     "composer": "Johann Strauss II",
     "year": 1874,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Bat",
+      "Il pipistrello"
+    ]
   },
   {
     "id": "the_two_widows",
@@ -1232,7 +1392,10 @@
     "composer": "Bedřich Smetana",
     "year": 1874,
     "language": "Czech",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Dvě vdovy",
+      "Le due vedove"
+    ]
   },
   {
     "id": "carmen",
@@ -1248,7 +1411,9 @@
     "composer": "Richard Wagner",
     "year": 1876,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Sigfrido"
+    ]
   },
   {
     "id": "g_tterd_mmerung",
@@ -1257,7 +1422,8 @@
     "year": 1876,
     "language": "German",
     "alternativeTitles": [
-      "Twilight of the Gods"
+      "Twilight of the Gods",
+      "Il crepuscolo degli dei"
     ]
   },
   {
@@ -1282,7 +1448,21 @@
     "composer": "Camille Saint-Saëns",
     "year": 1877,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Samson and Delilah",
+      "Sansone e Dalila"
+    ]
+  },
+  {
+    "id": "hms_pinafore",
+    "title": "H.M.S. Pinafore",
+    "composer": "Arthur Sullivan",
+    "year": 1878,
+    "language": "English",
+    "alternativeTitles": [
+      "The Simpsons",
+      "The Lass that Loved a Sailor"
+    ]
   },
   {
     "id": "eugene_onegin",
@@ -1290,7 +1470,10 @@
     "composer": "Pyotr Ilyich Tchaikovsky",
     "year": 1879,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Евгений Онегин",
+      "Evgenij Onegin"
+    ]
   },
   {
     "id": "h_rodiade",
@@ -1307,7 +1490,8 @@
     "year": 1881,
     "language": "French",
     "alternativeTitles": [
-      "The Tales of Hoffmann"
+      "The Tales of Hoffmann",
+      "I racconti di Hoffmann"
     ]
   },
   {
@@ -1332,7 +1516,10 @@
     "composer": "Nikolai Rimsky-Korsakov",
     "year": 1882,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Snegurochka",
+      "Снегурочка"
+    ]
   },
   {
     "id": "lakm",
@@ -1372,7 +1559,9 @@
     "composer": "Modest Mussorgsky",
     "year": 1886,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Хованщина"
+    ]
   },
   {
     "id": "le_roi_malgr__lui",
@@ -1422,7 +1611,11 @@
     "composer": "Pyotr Ilyich Tchaikovsky",
     "year": 1890,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Pikovaya dama",
+      "Пиковая дама",
+      "Pique dame"
+    ]
   },
   {
     "id": "l_amico_fritz",
@@ -1478,7 +1671,10 @@
     "composer": "Engelbert Humperdinck",
     "year": 1893,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Hansel and Gretel",
+      "Hansel e Gretel"
+    ]
   },
   {
     "id": "manon_lescaut",
@@ -1489,13 +1685,13 @@
     "alternativeTitles": []
   },
   {
-    "id": "tha_s__opera",
-    "title": "Thaïs (opera)",
+    "id": "tha_s_",
+    "title": "Thaïs",
     "composer": "Jules Massenet",
     "year": 1894,
     "language": "French",
     "alternativeTitles": [
-      "Thaïs"
+      "Thais"
     ]
   },
   {
@@ -1554,7 +1750,9 @@
     "composer": "Antonín Dvořák",
     "year": 1899,
     "language": "Czech",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Čert a Káča"
+    ]
   },
   {
     "id": "louise",
@@ -1602,7 +1800,9 @@
     "composer": "Carl Nielsen",
     "year": 1902,
     "language": "Danish",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Saul and David"
+    ]
   },
   {
     "id": "jen_fa",
@@ -1610,7 +1810,9 @@
     "composer": "Leoš Janáček",
     "year": 1904,
     "language": "Czech",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Jenufa"
+    ]
   },
   {
     "id": "madama_butterfly",
@@ -1626,7 +1828,10 @@
     "composer": "Franz Lehár",
     "year": 1905,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Merry Widow",
+      "La vedova allegra"
+    ]
   },
   {
     "id": "salome",
@@ -1650,7 +1855,9 @@
     "composer": "Frederick Delius",
     "year": 1907,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Romeo und Julia auf dem Dorfe"
+    ]
   },
   {
     "id": "ariane_et_barbe_bleue",
@@ -1658,7 +1865,9 @@
     "composer": "Paul Dukas",
     "year": 1907,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Arianna e Barbablù"
+    ]
   },
   {
     "id": "the_legend_of_the_invisible_city_of_kitezh",
@@ -1703,7 +1912,8 @@
     "year": 1907,
     "language": "Russian",
     "alternativeTitles": [
-      "Le coq d'or"
+      "Le coq d'or",
+      "Il gallo d'oro"
     ]
   },
   {
@@ -1746,7 +1956,9 @@
     "composer": "Richard Strauss",
     "year": 1912,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Arianna a Nasso"
+    ]
   },
   {
     "id": "der_ferne_klang",
@@ -1790,7 +2002,9 @@
     "composer": "Gustav Holst",
     "year": 1916,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Savitri"
+    ]
   },
   {
     "id": "arlecchino",
@@ -1806,7 +2020,10 @@
     "composer": "Alexander von Zemlinsky",
     "year": 1917,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "A Florentine Tragedy",
+      "Una tragedia fiorentina"
+    ]
   },
   {
     "id": "la_rondine",
@@ -1830,7 +2047,10 @@
     "composer": "Béla Bartók",
     "year": 1918,
     "language": "Hungarian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "A kékszakállú herceg vára",
+      "Il castello di Barbablù"
+    ]
   },
   {
     "id": "gianni_schicchi",
@@ -1872,7 +2092,9 @@
     "composer": "Erich Wolfgang Korngold",
     "year": 1920,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Conservatorio Venezia"
+    ]
   },
   {
     "id": "the_excursions_of_mr__broucek",
@@ -1891,7 +2113,9 @@
     "composer": "Leoš Janáček",
     "year": 1921,
     "language": "Czech",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Katya Kabanova"
+    ]
   },
   {
     "id": "the_love_for_three_oranges",
@@ -1899,7 +2123,11 @@
     "composer": "Sergei Prokofiev",
     "year": 1921,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "L'amore delle tre melarance",
+      "Любовь к трем апельсинам",
+      "Lyubov k trem apelsinam"
+    ]
   },
   {
     "id": "der_zwerg",
@@ -1908,7 +2136,8 @@
     "year": 1922,
     "language": "German",
     "alternativeTitles": [
-      "The Dwarf"
+      "The Dwarf",
+      "Il nano"
     ]
   },
   {
@@ -1943,7 +2172,10 @@
     "composer": "Leoš Janáček",
     "year": 1924,
     "language": "Czech",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Příhody lišky Bystroušky",
+      "The Adventures of the Vixen Sharp-Ears"
+    ]
   },
   {
     "id": "doktor_faust",
@@ -1959,7 +2191,9 @@
     "composer": "Maurice Ravel",
     "year": 1925,
     "language": "French",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "The Child and the Fairies"
+    ]
   },
   {
     "id": "wozzeck",
@@ -2040,7 +2274,8 @@
     "year": 1928,
     "language": "German",
     "alternativeTitles": [
-      "Die Dreigroschenoper"
+      "Die Dreigroschenoper",
+      "L'opera da tre soldi"
     ]
   },
   {
@@ -2049,7 +2284,11 @@
     "composer": "Dmitri Shostakovich",
     "year": 1930,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Hoc",
+      "Nos",
+      "Il naso"
+    ]
   },
   {
     "id": "rise_and_fall_of_the_city_of_mahagonny",
@@ -2058,7 +2297,8 @@
     "year": 1930,
     "language": "German",
     "alternativeTitles": [
-      "Aufstieg und Fall der Stadt Mahagonny"
+      "Aufstieg und Fall der Stadt Mahagonny",
+      "L'ascesa e la caduta della città di Mahagonny"
     ]
   },
   {
@@ -2094,7 +2334,8 @@
     "year": 1934,
     "language": "Russian",
     "alternativeTitles": [
-      "Lady Macbeth of Mtsensk"
+      "Lady Macbeth of Mtsensk",
+      "Lady Macbeth del distretto di Mzensk"
     ]
   },
   {
@@ -2103,7 +2344,9 @@
     "composer": "Richard Strauss",
     "year": 1935,
     "language": "German",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "La donna silenziosa"
+    ]
   },
   {
     "id": "porgy_and_bess",
@@ -2148,6 +2391,24 @@
     ]
   },
   {
+    "id": "the_old_maid_and_the_thief",
+    "title": "The Old Maid and the Thief",
+    "composer": "Gian Carlo Menotti",
+    "year": 1939,
+    "language": "English",
+    "alternativeTitles": []
+  },
+  {
+    "id": "volo_di_notte",
+    "title": "Volo di notte",
+    "composer": "Luigi Dallapiccola",
+    "year": 1940,
+    "language": "Italian",
+    "alternativeTitles": [
+      "Night Flight"
+    ]
+  },
+  {
     "id": "paul_bunyan",
     "title": "Paul Bunyan",
     "composer": "Benjamin Britten",
@@ -2177,7 +2438,11 @@
     "composer": "Sergei Prokofiev",
     "year": 1945,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Guerra e pace",
+      "Война и мир",
+      "Voyna i mir"
+    ]
   },
   {
     "id": "betrothal_in_a_monastery",
@@ -2185,7 +2450,11 @@
     "composer": "Sergei Prokofiev",
     "year": 1946,
     "language": "Russian",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Обручение в монастыре",
+      "Obruchenie v monastyre",
+      "Matrimonio al convento"
+    ]
   },
   {
     "id": "the_medium",
@@ -2193,7 +2462,9 @@
     "composer": "Gian Carlo Menotti",
     "year": 1946,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "La medium"
+    ]
   },
   {
     "id": "the_rape_of_lucretia",
@@ -2219,7 +2490,8 @@
     "language": "French",
     "alternativeTitles": [
       "Les Mamelles de Tirésias",
-      "The Breasts of Tiresias"
+      "The Breasts of Tiresias",
+      "Le Mammelle di Tiresia"
     ]
   },
   {
@@ -2229,7 +2501,9 @@
     "year": 1947,
     "language": "English",
     "alternativeTitles": [
-      "The Telephone"
+      "The Telephone",
+      "Il telefono",
+      "Le téléphone"
     ]
   },
   {
@@ -2238,7 +2512,9 @@
     "composer": "Gian Carlo Menotti",
     "year": 1950,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Il console"
+    ]
   },
   {
     "id": "amahl_and_the_night_visitors",
@@ -2246,7 +2522,9 @@
     "composer": "Gian Carlo Menotti",
     "year": 1951,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "Amahl e i visitatori notturni"
+    ]
   },
   {
     "id": "billy_budd",
@@ -2270,7 +2548,9 @@
     "composer": "Igor Stravinsky",
     "year": 1951,
     "language": "English",
-    "alternativeTitles": []
+    "alternativeTitles": [
+      "La carriera di un libertino"
+    ]
   },
   {
     "id": "gloriana",
@@ -2313,6 +2593,16 @@
     "alternativeTitles": []
   },
   {
+    "id": "il_cappello_di_paglia_di_firenze",
+    "title": "Il cappello di paglia di Firenze",
+    "composer": "Nino Rota",
+    "year": 1955,
+    "language": "Italian",
+    "alternativeTitles": [
+      "The Florentine Straw Hat"
+    ]
+  },
+  {
     "id": "candide",
     "title": "Candide",
     "composer": "Leonard Bernstein",
@@ -2327,7 +2617,8 @@
     "year": 1957,
     "language": "French",
     "alternativeTitles": [
-      "Dialogues of the Carmelites"
+      "Dialogues of the Carmelites",
+      "Dialoghi delle Carmelitane"
     ]
   },
   {
@@ -2437,6 +2728,16 @@
     "alternativeTitles": []
   },
   {
+    "id": "la_figlia_del_mago",
+    "title": "La figlia del mago",
+    "composer": "Lorenzo Ferrero",
+    "year": 1981,
+    "language": "Italian",
+    "alternativeTitles": [
+      "The Sorcerer's Daughter"
+    ]
+  },
+  {
     "id": "saint_fran_ois_d_assise",
     "title": "Saint François d'Assise",
     "composer": "Olivier Messiaen",
@@ -2450,22 +2751,6 @@
     "composer": "John Adams",
     "year": 1987,
     "language": "English",
-    "alternativeTitles": []
-  },
-  {
-    "id": "dafne",
-    "title": "Dafne",
-    "composer": "Jacopo Peri",
-    "year": 1597,
-    "language": "Italian",
-    "alternativeTitles": []
-  },
-  {
-    "id": "euridice",
-    "title": "Euridice",
-    "composer": "Jacopo Peri",
-    "year": 1600,
-    "language": "Italian",
     "alternativeTitles": []
   }
 ]
