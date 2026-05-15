@@ -304,12 +304,31 @@ function PracticeMode() {
   );
 }
 
+// Labels indexed by hintUsed (0–4). Index 4 ("that's all") is shown — with the button disabled — as
+// a reminder that all hints have been exhausted.
+const hintLabels = ["Hint?", "Another hint?", "One more hint?", "One last hint?", "That's all"];
+
+function getComposerInitials(composer) {
+  return composer.split(' ').map((w) => w[0] + '.').join(' ');
+}
+
+function getComposerMasked(composer) {
+  return composer.split(' ').map((w) => w[0] + '_'.repeat(w.length - 1)).join(' ');
+}
+
+function getOperaInitial(title) {
+  return title[0];
+}
+
+function getOperaMasked(title) {
+  return title.split(' ').map((w) => w[0] + '_'.repeat(w.length - 1)).join(' ');
+}
+
 function GameBoard({ target, searchPool = operas }) {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([]);
   const [won, setWon] = useState(false);
-  const [hintsUsed, setHintsUsed] = useState(0);
-  const [currentHint, setCurrentHint] = useState(null);
+  const [hintUsed, setHintUsed] = useState(0);
   const attemptedOperaIds = useMemo(() => new Set(history.map((entry) => entry.id)), [history]);
   const availableOperas = useMemo(
     () => searchPool.filter((opera) => !attemptedOperaIds.has(opera.id)),
@@ -322,8 +341,7 @@ function GameBoard({ target, searchPool = operas }) {
     setInput('');
     setHistory([]);
     setWon(false);
-    setHintsUsed(0);
-    setCurrentHint(null);
+    setHintUsed(0);
   }, [target.id]);
 
   const bestMatch = useMemo(() => {
@@ -341,23 +359,22 @@ function GameBoard({ target, searchPool = operas }) {
     [history],
   );
   const yearRecap = useMemo(() => getYearRecap(history, target.year), [history, target.year]);
-  const composerCorrect = useMemo(
-    () => history.some((entry) => entry.composerCorrect),
-    [history],
-  );
-
-  const handleHintClick = () => {
-    if (hintsUsed >= 4) return;
-
-    const hint = getHint(target, hintsUsed, composerCorrect);
-
-    if (hint === null) {
-      setHintsUsed(4);
-      setCurrentHint(null);
-    } else {
-      setCurrentHint(hint);
-      setHintsUsed(hintsUsed + 1);
+  
+  // Hint reveal sequence (hintUsed tracks how many hints have been given):
+  //   1 → composer initials in recap (e.g. "G. V.")
+  //   2 → opera initial in the hint panel (e.g. "T")
+  //   3 → composer name masked in recap (e.g. "G_______ V_____")
+  //   4 → opera title masked in hint panel (e.g. "T_________ A_____")
+  // Hints 1 and 3 are skipped when composerUnlocked (composer already guessed correctly),
+  // so the next opera hint is surfaced immediately instead.
+  const handleHint = () => {
+    if (hintUsed >= 4) return;
+    const composerHints = new Set([1, 3]);
+    let next = hintUsed + 1;
+    while (next <= 4 && composerHints.has(next) && composerUnlocked) {
+      next++;
     }
+    setHintUsed(Math.min(next, 4));
   };
 
   const submitGuess = (opera) => {
@@ -409,29 +426,32 @@ function GameBoard({ target, searchPool = operas }) {
           placeholder={`Type at least ${minimumAutocompleteLetters} letters`}
           disabled={won}
         />
-        {bestMatch ? (
-          <button
-            className="accent-button"
-            onClick={() => submitGuess(bestMatch.opera)}
-            disabled={won}
-          >
-            Guess: {bestMatch.opera.title}
-          </button>
-        ) : normalizedInput.length > 0 && normalizedInput.length < minimumAutocompleteLetters ? (
-          <button className="accent-button" disabled>{`Type at least ${minimumAutocompleteLetters} letters`}</button>
-        ) : (
-          <button className="accent-button" disabled>
-            No match found
-          </button>
-        )}
-        <button
-          className="secondary-button hint-button"
-          onClick={handleHintClick}
-          disabled={won || hintsUsed >= 4}
-          title={hintsUsed >= 4 ? 'No more hints available' : 'Get a hint'}
-        >
-          {getHintButtonLabel(hintsUsed)}
-        </button>
+        <div className="guess-actions">
+          {bestMatch ? (
+            <button
+              className="accent-button"
+              onClick={() => submitGuess(bestMatch.opera)}
+              disabled={won}
+            >
+              Guess: {bestMatch.opera.title}
+            </button>
+          ) : normalizedInput.length > 0 && normalizedInput.length < minimumAutocompleteLetters ? (
+            <button className="accent-button" disabled>{`Type at least ${minimumAutocompleteLetters} letters`}</button>
+          ) : (
+            <button className="accent-button" disabled>
+              No match found
+            </button>
+          )}
+          {history.length > 0 && !won && (
+            <button
+              className="secondary-button hint-button"
+              onClick={handleHint}
+              disabled={won || hintUsed >= 4}
+            >
+              {hintLabels[hintUsed]}
+            </button>
+          )}
+        </div>
       </div>
 
       {won && (
@@ -471,6 +491,13 @@ function GameBoard({ target, searchPool = operas }) {
       )}
 
       <div>
+        {hintUsed >= 2 && !won && (
+          <div className="opera-hint-panel">
+            <strong>
+              {hintUsed >= 4 ? 'The Opera is called...' + getOperaMasked(target.title) : 'The Opera title starts with...' + getOperaInitial(target.title)}
+            </strong>
+          </div>
+        )}
         {history.length > 0 && !won && (
           <div className="recap-box">
             <strong>Recap:</strong>
@@ -485,7 +512,15 @@ function GameBoard({ target, searchPool = operas }) {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>{composerUnlocked ? target.composer : '❓'}</td>
+                    <td>
+                      {composerUnlocked
+                        ? target.composer
+                        : hintUsed >= 3
+                          ? getComposerMasked(target.composer)
+                          : hintUsed >= 1
+                            ? getComposerInitials(target.composer)
+                            : '❓'}
+                    </td>
                     <td>{languageUnlocked ? target.language : '❓'}</td>
                     <td>{yearRecap}</td>
                   </tr>
