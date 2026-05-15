@@ -4,7 +4,7 @@ import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import operas from './data/operas.json';
 import { buildSearchIndex, findBestOperaMatch } from './utils/matching';
-import { filterOperas, getDailyOpera, getRandomOpera, getYearFeedback } from './utils/game';
+import { filterOperas, getDailyOpera, getRandomOpera, getYearFeedback, getHint, getHintButtonLabel } from './utils/game';
 
 const uniqueLanguages = [...new Set(operas.map((opera) => opera.language))].sort();
 const minOperaYear = Math.min(...operas.map((opera) => opera.year));
@@ -308,6 +308,8 @@ function GameBoard({ target, searchPool = operas }) {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([]);
   const [won, setWon] = useState(false);
+  const [hintsUsed, setHintsUsed] = useState(0);
+  const [currentHint, setCurrentHint] = useState(null);
   const attemptedOperaIds = useMemo(() => new Set(history.map((entry) => entry.id)), [history]);
   const availableOperas = useMemo(
     () => searchPool.filter((opera) => !attemptedOperaIds.has(opera.id)),
@@ -320,6 +322,8 @@ function GameBoard({ target, searchPool = operas }) {
     setInput('');
     setHistory([]);
     setWon(false);
+    setHintsUsed(0);
+    setCurrentHint(null);
   }, [target.id]);
 
   const bestMatch = useMemo(() => {
@@ -337,6 +341,24 @@ function GameBoard({ target, searchPool = operas }) {
     [history],
   );
   const yearRecap = useMemo(() => getYearRecap(history, target.year), [history, target.year]);
+  const composerCorrect = useMemo(
+    () => history.some((entry) => entry.composerCorrect),
+    [history],
+  );
+
+  const handleHintClick = () => {
+    if (hintsUsed >= 4) return;
+
+    const hint = getHint(target, hintsUsed, composerCorrect);
+
+    if (hint === null) {
+      setHintsUsed(4);
+      setCurrentHint(null);
+    } else {
+      setCurrentHint(hint);
+      setHintsUsed(hintsUsed + 1);
+    }
+  };
 
   const submitGuess = (opera) => {
     if (attemptedOperaIds.has(opera.id)) {
@@ -402,6 +424,14 @@ function GameBoard({ target, searchPool = operas }) {
             No match found
           </button>
         )}
+        <button
+          className="secondary-button hint-button"
+          onClick={handleHintClick}
+          disabled={won || hintsUsed >= 4}
+          title={hintsUsed >= 4 ? 'No more hints available' : 'Get a hint'}
+        >
+          {getHintButtonLabel(hintsUsed)}
+        </button>
       </div>
 
       {won && (
@@ -462,6 +492,12 @@ function GameBoard({ target, searchPool = operas }) {
                 </tbody>
               </table>
             </div>
+            {hintsUsed > 0 && (
+              <div className="hints-section">
+                <strong>Hints:</strong>
+                <p>{currentHint}</p>
+              </div>
+            )}
           </div>
         )}
         <h3>Guess History</h3>
