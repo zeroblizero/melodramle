@@ -514,6 +514,42 @@ td {
   color: var(--bad);
 }
 
+.secondary-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.guess-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.guess-actions .accent-button,
+.guess-actions .secondary-button {
+  margin-top: 0;
+}
+
+.guess-actions .accent-button {
+  flex: 1;
+}
+
+.hint-button {
+  white-space: nowrap;
+}
+
+.opera-hint-panel {
+  border: 1px solid color-mix(in srgb, var(--gold-deep) 72%, #6f4813 28%);
+  border-radius: 8px;
+  background: #1e0a2e;
+  padding: 0.75rem;
+  margin-bottom: 0.7rem;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  color: var(--gold-bright);
+}
+
 @media (max-width: 640px) {
   .topbar {
     grid-template-columns: 1fr auto;
