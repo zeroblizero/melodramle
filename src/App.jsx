@@ -4,7 +4,7 @@ import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import operas from './data/operas.json';
 import { buildSearchIndex, findBestOperaMatch } from './utils/matching';
-import { filterOperas, getDailyOpera, getRandomOpera, getYearFeedback } from './utils/game';
+import { filterOperas, getDailyOpera, getRandomOpera, getYearFeedback, getHint, getHintButtonLabel } from './utils/game';
 
 const uniqueLanguages = [...new Set(operas.map((opera) => opera.language))].sort();
 const minOperaYear = Math.min(...operas.map((opera) => opera.year));
@@ -527,6 +527,12 @@ function GameBoard({ target, searchPool = operas }) {
                 </tbody>
               </table>
             </div>
+            {hintsUsed > 0 && (
+              <div className="hints-section">
+                <strong>Hints:</strong>
+                <p>{currentHint}</p>
+              </div>
+            )}
           </div>
         )}
         <h3>Guess History</h3>
