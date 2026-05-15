@@ -527,12 +527,6 @@ function GameBoard({ target, searchPool = operas }) {
                 </tbody>
               </table>
             </div>
-            {hintsUsed > 0 && (
-              <div className="hints-section">
-                <strong>Hints:</strong>
-                <p>{currentHint}</p>
-              </div>
-            )}
           </div>
         )}
         <h3>Guess History</h3>
