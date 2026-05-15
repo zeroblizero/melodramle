@@ -442,7 +442,7 @@ function GameBoard({ target, searchPool = operas }) {
               No match found
             </button>
           )}
-          {history.length > 0 && (
+          {history.length > 0 && !won && (
             <button
               className="secondary-button hint-button"
               onClick={handleHint}
@@ -493,8 +493,8 @@ function GameBoard({ target, searchPool = operas }) {
       <div>
         {hintUsed >= 2 && !won && (
           <div className="opera-hint-panel">
-            The opera is… <strong>
-              {hintUsed >= 4 ? getOperaMasked(target.title) : getOperaInitial(target.title)}
+            <strong>
+              {hintUsed >= 4 ? 'The Opera is called...' + getOperaMasked(target.title) : 'The Opera title starts with...' + getOperaInitial(target.title)}
             </strong>
           </div>
         )}
