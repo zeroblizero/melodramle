@@ -18,16 +18,16 @@ function getYearRecap(history, targetYear) {
   if (history.length === 0) {
     return '❓';
   }
-
+  
   const guessedYears = history.map((entry) => entry.year);
   if (guessedYears.length >= 2) {
-    const closestLower = Math.max(...guessedYears.filter((year) => year < targetYear), -Infinity);
-    const closestUpper = Math.min(...guessedYears.filter((year) => year > targetYear), Infinity);
+    const closestLower = Math.max(...guessedYears.filter((year) => year <= targetYear), -Infinity);
+    const closestUpper = Math.min(...guessedYears.filter((year) => year >= targetYear), Infinity);
     if (Number.isFinite(closestLower) && Number.isFinite(closestUpper)) {
-      return `${closestLower}-${closestUpper}`;
+      return closestLower === closestUpper ? closestLower : `${closestLower}-${closestUpper}`;
     }
   }
-
+  // If there's only one guess or all guesses are on the same side of the target year, show the closest guess with a symbol indicating whether it's higher (▲) or lower (▼) than the target year.
   const closestYear = guessedYears.reduce((best, current) =>
     Math.abs(current - targetYear) < Math.abs(best - targetYear) ? current : best,
   guessedYears[0]);
@@ -494,7 +494,7 @@ function GameBoard({ target, searchPool = operas }) {
         {hintUsed >= 2 && !won && (
           <div className="opera-hint-panel">
             <strong>
-              {hintUsed >= 4 ? 'The Opera is called...' + getOperaMasked(target.title) : 'The Opera title starts with...' + getOperaInitial(target.title)}
+              {hintUsed >= 4 ? 'The Opera is called... ' + getOperaMasked(target.title) : 'The Opera title starts with... ' + getOperaInitial(target.title)}
             </strong>
           </div>
         )}
