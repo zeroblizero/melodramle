@@ -72,6 +72,7 @@ function GameBoard({ target, searchPool = operas }) {
   };
 
   const submitGuess = (opera) => {
+    setInput('');
     if (attemptedOperaIds.has(opera.id)) {
       return;
     }
@@ -96,7 +97,6 @@ function GameBoard({ target, searchPool = operas }) {
       ...prev,
     ]);
 
-    setInput('');
     if (titleCorrect) {
       setWon(true);
     }
@@ -114,7 +114,9 @@ function GameBoard({ target, searchPool = operas }) {
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               e.preventDefault();
-              submitGuess(bestMatch.opera);
+              if (bestMatch) {
+                submitGuess(bestMatch.opera);
+              }
             }
           }}
           placeholder={`Type at least ${minimumAutocompleteLetters} letters`}
