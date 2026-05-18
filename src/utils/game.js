@@ -38,9 +38,36 @@ export const filterOperas = (operas, { languages, fromYear, toYear }) =>
     return languageAllowed && fromAllowed && toAllowed;
   });
 
-const getComposerInitials = (composerName) => {
-  const parts = composerName.split(' ').filter(part => part.length > 0);
-  return parts.map(part => part.charAt(0).toUpperCase()).join('. ') + '.';
+export const getComposerInitials = (composerName) =>
+  composerName.split(' ').map((w) => w[0] + '.').join(' ');
+
+export const getComposerMasked = (composer) =>
+  composer.split(' ').map((w) => w[0] + '_'.repeat(w.length - 1)).join(' ');
+
+export const getOperaInitial = (title) => title[0];
+
+export const getOperaMasked = (title) =>
+  title.split(' ').map((w) => w[0] + '_'.repeat(w.length - 1)).join(' ');
+
+export const getYearRecap = (history, targetYear) => {
+  if (history.length === 0) {
+    return '❓';
+  }
+
+  const guessedYears = history.map((entry) => entry.year);
+  if (guessedYears.length >= 2) {
+    const closestLower = Math.max(...guessedYears.filter((year) => year <= targetYear), -Infinity);
+    const closestUpper = Math.min(...guessedYears.filter((year) => year >= targetYear), Infinity);
+    if (Number.isFinite(closestLower) && Number.isFinite(closestUpper)) {
+      return closestLower === closestUpper ? closestLower : `${closestLower}-${closestUpper}`;
+    }
+  }
+  // If there's only one guess or all guesses are on the same side of the target year, show the closest guess with a symbol indicating whether it's higher (▲) or lower (▼) than the target year.
+  const closestYear = guessedYears.reduce((best, current) =>
+    Math.abs(current - targetYear) < Math.abs(best - targetYear) ? current : best,
+  guessedYears[0]);
+  const feedback = getYearFeedback(closestYear, targetYear);
+  return feedback.isCorrect ? String(closestYear) : `${feedback.symbol} ${closestYear}`;
 };
 
 export const getHint = (opera, hintsUsed, composerCorrect) => {
